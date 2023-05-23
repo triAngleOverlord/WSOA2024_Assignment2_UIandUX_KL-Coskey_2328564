@@ -15,5 +15,6 @@ MonoBehaviour:
   sellingPrice: 1
   buyingPrice: 3
   itemName: Hat
-  amountInShop: 5
+  stockAmount: 4
+  amountInShop: 0
   amountInStack: 0

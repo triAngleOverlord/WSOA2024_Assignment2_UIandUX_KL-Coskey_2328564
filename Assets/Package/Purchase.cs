@@ -50,6 +50,7 @@ public class Purchase : MonoBehaviour
             GameObject.Find("Money").GetComponent<TextMeshProUGUI>().text = GameManager.moneyNow.ToString();
             GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());
             GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
+            GameObject.Find("ItemClicked").SetActive(false);
 
         }
 
@@ -81,7 +82,7 @@ public class Purchase : MonoBehaviour
         {
             //GameObject parent= GameObject.Find(itemDetails.itemName);
             GameObject soldSign = Instantiate(GameManager.Instance.soldoutPopUp);
-            soldSign.transform.localScale = Vector3.one;
+            //soldSign.transform.localScale = Vector3.one;
             soldSign.transform.localPosition = itemButton.transform.position;
             itemButton.GetComponent<Button>().enabled = false;
         }

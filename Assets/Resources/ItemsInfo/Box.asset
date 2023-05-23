@@ -15,5 +15,6 @@ MonoBehaviour:
   sellingPrice: 5
   buyingPrice: 6
   itemName: Box
-  amountInShop: 5
+  stockAmount: 10
+  amountInShop: 0
   amountInStack: 0
