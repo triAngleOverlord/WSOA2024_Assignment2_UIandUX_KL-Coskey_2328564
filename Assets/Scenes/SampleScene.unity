@@ -1974,6 +1974,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 422910630568213327, guid: 42ab0b6d486d1cf41af67a92c94ff4de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422910631240992605, guid: 42ab0b6d486d1cf41af67a92c94ff4de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422910631240992605, guid: 42ab0b6d486d1cf41af67a92c94ff4de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ab0b6d486d1cf41af67a92c94ff4de, type: 3}
 --- !u!1001 &8877461107340852416
