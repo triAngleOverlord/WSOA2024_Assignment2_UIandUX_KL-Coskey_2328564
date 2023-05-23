@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject slotUpgrade;
 
     //public ChestSpaces spaces;
-    public List<GameObject> chestSpaces;
+    public List<Transform> chestSpaces;
     public static int currentChestSpace;
 
     public ItemDetails[] _itemDetails;
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 
         itemPopUp = GameObject.Find("ItemClicked");
         soldoutPopUp = Resources.Load<GameObject>("SOLDOUT");
+        slotUpgrade = Resources.Load<GameObject>("Slot");
 
         _PopUpDetails =GameObject.FindObjectsByType<POPUPDetails>(FindObjectsSortMode.InstanceID);
         for (int i = 0; i < _PopUpDetails.Length; i++)
@@ -55,6 +56,10 @@ public class GameManager : MonoBehaviour
             //FindAnyObjectByType<ItemDetails>().popUpThing = itemPopUp;
         itemPopUp.SetActive(false);
         
+        foreach (Transform child in GameObject.Find("Slots_Chest").transform)
+        {
+            chestSpaces.Add(child.transform);
+        }
                     //Resources.Load<GameObject>("ItemClicked");
 
 
@@ -86,7 +91,7 @@ public class GameManager : MonoBehaviour
         //itemPopUp.SetActive(false);
 
         //currentChestSpace = 0;
-        slotUpgrade = Resources.Load<GameObject>("Slot");
+        
 
         //Resources.Load<GameObject>("ItemClicked");
 
@@ -103,7 +108,7 @@ public class GameManager : MonoBehaviour
 
     
     
-
+    /*
     public void chestUpgrade(GameObject chest)
     {
         chestSpaces.Add(chest);
@@ -112,6 +117,6 @@ public class GameManager : MonoBehaviour
         
         //extraChest.SetActive(false);
         Debug.Log(chestSpaces[currentChestSpace].gameObject.name);
-    }
+    }*/
 
 }

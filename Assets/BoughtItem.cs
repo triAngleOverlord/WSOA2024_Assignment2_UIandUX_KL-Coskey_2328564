@@ -41,4 +41,20 @@ public class BoughtItem : MonoBehaviour
             
         
     }
+
+    public void chestUpgrade()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject extraChest = Instantiate(GameManager.Instance.slotUpgrade);
+            extraChest.transform.SetParent(GameObject.Find("Slots_Chest").transform);
+            extraChest.transform.localScale = Vector3.one;
+            GameManager.Instance.chestSpaces.Add(extraChest.GetComponent<Transform>());
+
+        }
+            
+
+       
+        
+    }
 }
