@@ -14,5 +14,6 @@ namespace Assets.Scripts
         public int Amount;
         public int Weight;
         public GameObject prefab;
+        public bool stackable;
     }
 }
