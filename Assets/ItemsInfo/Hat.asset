@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hat
   m_EditorClassIdentifier: 
   sellingPrice: 1
-  buyingPrice: 5
-  amountInStack: 0
+  buyingPrice: 3
+  itemName: Hat
   amountInShop: 5
+  amountInStack: 0

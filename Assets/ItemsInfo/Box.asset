@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellingPrice: 5
   buyingPrice: 6
-  amountInStack: 0
+  itemName: Box
   amountInShop: 5
+  amountInStack: 0

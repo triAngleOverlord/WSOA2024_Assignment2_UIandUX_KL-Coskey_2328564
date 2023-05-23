@@ -4,26 +4,32 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuyingPopUp : MonoBehaviour
+public class Purchase : MonoBehaviour
 {
+    public ItemDetails itemDetails;
     public string itemName;
     public float price;
     public float amountLeft;
 
+    
 
+/*
     private void Update()
     {
         itemName = GameManager.c_itemName;
         price = GameManager.c_itemPrice;
         amountLeft = GameManager.c_itemAmount;
-    }
+    }*/
 
     public void buyWithPrice()
     {
-        GameManager.c_itemName= itemName;
+        itemName = itemDetails.itemName;
+        price = itemDetails.buyingPrice;
+        amountLeft = itemDetails.amountInShop;
+        /*GameManager.c_itemName= itemName;
         GameManager.c_itemPrice= price;
         GameManager.c_itemAmount= amountLeft;
-       /*
+       
        Debug.Log(price);
        Debug.Log(itemName);
        Debug.Log(amountLeft);
@@ -62,12 +68,14 @@ public class BuyingPopUp : MonoBehaviour
     }
 
 
-    public void showAmountItems()
+    public void sliderAmount()
     {
-        GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
+        //amountLeft = itemDetails.amountInShop;
+        price = itemDetails.buyingPrice;
+        //GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
         var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
         GameObject.Find("NumberItems").GetComponent<TextMeshProUGUI>().text = new string(c_value.ToString());
-        GameObject.Find("Price").GetComponent<TextMeshProUGUI>().text = new string("$"+(c_value*price).ToString());
+        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("$"+(c_value*price).ToString());
 
     }
 

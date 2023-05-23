@@ -13,7 +13,7 @@ public class POPUPDetails : MonoBehaviour
 
     public ItemDetails itemDetails;
 
-    public BuyingPopUp buyStuff;
+    public Purchase buyStuff;
     public GameObject popUpThing;
 
     /*
@@ -62,8 +62,11 @@ public class POPUPDetails : MonoBehaviour
 
         GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
+        GameObject.Find("Slider").GetComponent<Purchase>().itemDetails = itemDetails;
+        GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemDetails = itemDetails;
         GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string ("$"+ price.ToString());
         GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string (amountLeft.ToString());
+
 
 
 
