@@ -708,10 +708,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6541046975150447569}
     m_Modifications:
-    - target: {fileID: 4930772770919333928, guid: 73c4d42d9491d5548be43c550fb5b60e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: chestUpgrade
-      objectReference: {fileID: 0}
     - target: {fileID: 4930772770919333930, guid: 73c4d42d9491d5548be43c550fb5b60e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -800,13 +796,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestUpgradeItem
       objectReference: {fileID: 0}
+    - target: {fileID: 4930772770919333931, guid: 73c4d42d9491d5548be43c550fb5b60e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c4d42d9491d5548be43c550fb5b60e, type: 3}
---- !u!224 &1103951487 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4930772770919333930, guid: 73c4d42d9491d5548be43c550fb5b60e, type: 3}
-  m_PrefabInstance: {fileID: 1103951486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104705960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,6 +2049,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73111345b7b37b4419a9b6b93848814c, type: 3}
+--- !u!224 &4930772769850537556 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4930772770919333930, guid: 73c4d42d9491d5548be43c550fb5b60e, type: 3}
+  m_PrefabInstance: {fileID: 1103951486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5441654692583719712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3181,7 +3181,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1103951487}
+  - {fileID: 4930772769850537556}
   m_Father: {fileID: 6541046973715515141}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

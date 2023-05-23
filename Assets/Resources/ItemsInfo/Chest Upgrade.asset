@@ -15,6 +15,6 @@ MonoBehaviour:
   sellingPrice: 0
   buyingPrice: 15
   itemName: Chest Upgrade
-  stockAmount: 4
-  amountInShop: 0
-  amountInStack: 0
+  stockAmount: 1
+  amountInShop: 4
+  amountInStack: 1

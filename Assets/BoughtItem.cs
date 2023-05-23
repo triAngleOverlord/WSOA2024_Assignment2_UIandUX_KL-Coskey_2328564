@@ -25,7 +25,9 @@ public class BoughtItem : MonoBehaviour
             item.tag = "Untagged";
 
             itemDetails.amountInStack++;
-            item.gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+            item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+        
+            //item.gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
         }
 
         else
@@ -41,7 +43,7 @@ public class BoughtItem : MonoBehaviour
             
         
     }
-
+    /*
     public void chestUpgrade()
     {
         for (int i = 0; i < 4; i++)
@@ -56,5 +58,5 @@ public class BoughtItem : MonoBehaviour
 
        
         
-    }
+    }*/
 }
