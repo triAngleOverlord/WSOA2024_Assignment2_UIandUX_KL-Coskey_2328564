@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     public static int moneyToBuy;
 
     
-    public static string c_itemName;
-    public static float c_itemPrice;
-    public static float c_itemAmount;
+    //public static string c_itemName;
+    //public static float c_itemPrice;
+    //public static float c_itemAmount;
 
     //public static int itemStackNum;
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject itemPopUp;
 
     public GameObject soldoutPopUp;
-    public GameObject chestContainer;
+    public GameObject slotUpgrade;
 
     //public ChestSpaces spaces;
     public List<GameObject> chestSpaces;
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         ///gives the popup and soldout objects to every item's buy button at beginning in order to instantiate later
         //itemPopUp = GameObject.Find("ItemClicked");
         
-        chestContainer = Resources.Load<GameObject>("Container_Chest");
+        //chestContainer = Resources.Load<GameObject>("Container_Chest");
 
         /*
         //spaces = new ChestSpaces();
@@ -83,9 +83,10 @@ public class GameManager : MonoBehaviour
             buy[i].soldPopUp = soldoutPopUp;
         }*/
 
-        itemPopUp.SetActive(false);
+        //itemPopUp.SetActive(false);
 
-        currentChestSpace = 0;
+        //currentChestSpace = 0;
+        slotUpgrade = Resources.Load<GameObject>("Slot");
 
         //Resources.Load<GameObject>("ItemClicked");
 
