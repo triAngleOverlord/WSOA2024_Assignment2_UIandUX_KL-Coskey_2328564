@@ -9,14 +9,18 @@ public class Buttons : MonoBehaviour
     public GameObject p_Shop;
     public GameObject p_Chest;
     public GameObject p_Pop;
+    public GameObject p_Outside;
+    public GameObject b_Return;
     public float c_Money;
 
     private void Awake()
     {
-        p_Backpack = GameObject.Find("Backpack");
-        p_Shop = GameObject.Find("Shop");
-        p_Chest = GameObject.Find("Chest");
+        p_Backpack = GameObject.Find("BACKPACK");
+        p_Shop = GameObject.Find("SHOP");
+        p_Chest = GameObject.Find("CHEST");
         p_Pop = GameObject.Find("ItemClicked");
+        p_Outside = GameObject.Find("OUTSIDE");
+        b_Return = GameObject.Find("Return");
 
 
 
@@ -37,19 +41,24 @@ public class Buttons : MonoBehaviour
 
     public void openTheChest()
     {
+        b_Return.SetActive(true);
+        p_Outside.SetActive(false);
+
         p_Shop.SetActive(false);
 
         p_Chest.SetActive(true);
-        p_Chest.GetComponent<RectTransform>().transform.localPosition = Vector3.left * 190;
+        p_Chest.GetComponent<RectTransform>().transform.localPosition = Vector3.left * 470;
 
         p_Backpack.SetActive(true);
-        p_Backpack.GetComponent<RectTransform>().transform.localPosition = Vector3.right * 190;
+        p_Backpack.GetComponent<RectTransform>().transform.localPosition = Vector3.right * 470;
 
 
     }
 
     public void openTheShop()
     {
+        b_Return.SetActive(true);
+        p_Outside.SetActive(false);
         if (p_Pop != false)
         {
             p_Pop.SetActive(false);
@@ -58,10 +67,10 @@ public class Buttons : MonoBehaviour
         p_Chest.SetActive(false);
 
         p_Shop.SetActive(true);
-        p_Shop.GetComponent<RectTransform>().transform.localPosition = Vector3.left * 190;
+        p_Shop.GetComponent<RectTransform>().transform.localPosition = Vector3.left * 470;
 
         p_Backpack.SetActive(true);
-        p_Backpack.GetComponent<RectTransform>().transform.localPosition = Vector3.right * 190;
+        p_Backpack.GetComponent<RectTransform>().transform.localPosition = Vector3.right * 470;
 
         /*
         c_Money--;
@@ -73,6 +82,9 @@ public class Buttons : MonoBehaviour
 
     public void openTheBackpack()
     {
+        p_Outside.SetActive(false);
+        b_Return.SetActive(true);
+
         p_Chest.SetActive(false);
 
         p_Shop.SetActive(false);
@@ -84,6 +96,12 @@ public class Buttons : MonoBehaviour
 
     public void goOutside()
     {
+        p_Outside.SetActive(true);
+        b_Return.SetActive(false);
+
+        p_Backpack.SetActive(false );
+        p_Chest.SetActive(false);
+        p_Shop.SetActive(false);
 
     }
 
