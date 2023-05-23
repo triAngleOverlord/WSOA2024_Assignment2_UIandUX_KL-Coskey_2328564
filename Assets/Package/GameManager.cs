@@ -30,18 +30,19 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
-            Instance=this;
+            Destroy(this);
         }
         else
         {
-            Destroy(this);
+            Instance=this;
         }
 
         moneyNow = 100;
 
         itemPopUp = GameObject.Find("ItemClicked");
+        soldoutPopUp = Resources.Load<GameObject>("SOLDOUT");
 
         _PopUpDetails =GameObject.FindObjectsByType<POPUPDetails>(FindObjectsSortMode.InstanceID);
         for (int i = 0; i < _PopUpDetails.Length; i++)
@@ -55,21 +56,22 @@ public class GameManager : MonoBehaviour
                     //Resources.Load<GameObject>("ItemClicked");
 
 
-        itemPopUp = Resources.Load<GameObject>("ItemClicked");
+        //itemPopUp = Resources.Load<GameObject>("ItemClicked");
 
 
         ///gives the popup and soldout objects to every item's buy button at beginning in order to instantiate later
-        itemPopUp = GameObject.Find("ItemClicked");
-        soldoutPopUp = Resources.Load<GameObject>("SOLDOUT");
+        //itemPopUp = GameObject.Find("ItemClicked");
+        
         chestContainer = Resources.Load<GameObject>("Container_Chest");
 
+        /*
         //spaces = new ChestSpaces();
         chestSpaces = new List<GameObject>();
         GameObject extraChest = Instantiate(chestContainer, GameObject.Find("Chest").transform);
         chestSpaces.Add(extraChest);
         GameObject.Find("PreviousPageChest").GetComponent<ChestButtons>().chestContainer = chestContainer;
         //Debug.Log(GameObject.Find("PreviousPageChest").gameObject.name);
-        Debug.Log( chestSpaces[currentChestSpace].gameObject.name);
+        Debug.Log( chestSpaces[currentChestSpace].gameObject.name);*/
 
         /*
         buy =GameObject.FindObjectsByType<BuyButton>(FindObjectsSortMode.InstanceID);

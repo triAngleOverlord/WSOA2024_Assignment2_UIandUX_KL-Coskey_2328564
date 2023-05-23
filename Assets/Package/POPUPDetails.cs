@@ -11,6 +11,8 @@ public class POPUPDetails : MonoBehaviour
     [SerializeField] public float price;
     [SerializeField] public float amountLeft;
 
+    public ItemDetails itemDetails;
+
     public BuyingPopUp buyStuff;
     public GameObject popUpThing;
 
@@ -28,7 +30,7 @@ public class POPUPDetails : MonoBehaviour
 
     public void thisItemSelected()
     {
-        if ( popUpThing.activeSelf == false )
+        if (popUpThing.activeSelf == false )
         {
             popUpThing.SetActive(true);
             setPopUp();
@@ -45,15 +47,18 @@ public class POPUPDetails : MonoBehaviour
 
     public void setPopUp()
     {
+        itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
         popUpThing.transform.SetParent(transform);
         popUpThing.transform.localPosition = Vector3.right * 50;
         //GameObject.Find("Slider").GetComponent<Slider>().value = 1;
 
         //buyStuff = GameObject.Find("BuyButton").GetComponent<BuyingPopUp>();
+        amountLeft = itemDetails.amountInShop;
+        price = itemDetails.buyingPrice;
 
-        GameManager.c_itemName = transform.name;
-        GameManager.c_itemPrice = price;
-        GameManager.c_itemAmount = amountLeft;
+        //GameManager.c_itemName = transform.name;
+        //GameManager.c_itemPrice = price;
+        //GameManager.c_itemAmount = amountLeft;
 
         GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;

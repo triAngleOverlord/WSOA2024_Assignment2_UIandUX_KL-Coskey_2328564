@@ -29,7 +29,7 @@ public class Buttons : MonoBehaviour
     {
 
         ///only the backpack is open at the beginning
-        openTheBackpack();
+        //openTheBackpack();
 
         goOutside();
 

@@ -5,9 +5,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ItemDetails : ScriptableObject
 {
-    public float sellingPrice;
-    public float buyingPrice;
+    [SerializeField] public float sellingPrice;
+    [SerializeField] public float buyingPrice;
 
     public float amountInStack;
-    public float amountInShop;
+    [SerializeField] public float amountInShop;
+
+    public void Awake()
+    {
+        amountInShop = 0;
+    }
 }

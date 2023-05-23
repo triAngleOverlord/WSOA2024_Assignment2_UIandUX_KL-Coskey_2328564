@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
   m_Name: Box
   m_EditorClassIdentifier: 
-  sellingPrice: 0
-  buyingPrice: 0
+  sellingPrice: 5
+  buyingPrice: 6
   amountInStack: 0
-  amountInShop: 0
+  amountInShop: 5
