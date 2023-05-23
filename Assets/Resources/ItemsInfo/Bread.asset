@@ -15,5 +15,6 @@ MonoBehaviour:
   sellingPrice: 2
   buyingPrice: 4
   itemName: Bread
-  amountInShop: 5
-  amountInStack: 1
+  stockAmount: 5
+  amountInShop: 0
+  amountInStack: 3

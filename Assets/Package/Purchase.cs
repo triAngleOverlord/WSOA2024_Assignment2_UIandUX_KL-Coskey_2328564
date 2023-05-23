@@ -11,15 +11,17 @@ public class Purchase : MonoBehaviour
     public float price;
     public float amountLeft;
 
-    
+    public GameObject itemButton;
 
-/*
-    private void Update()
-    {
-        itemName = GameManager.c_itemName;
-        price = GameManager.c_itemPrice;
-        amountLeft = GameManager.c_itemAmount;
-    }*/
+
+
+    /*
+        private void Update()
+        {
+            itemName = GameManager.c_itemName;
+            price = GameManager.c_itemPrice;
+            amountLeft = GameManager.c_itemAmount;
+        }*/
 
     public void buyWithPrice()
     {
@@ -57,7 +59,7 @@ public class Purchase : MonoBehaviour
         }
 
         
-
+        checkItemStock();
 
     }
 
@@ -71,6 +73,18 @@ public class Purchase : MonoBehaviour
         GameObject.Find("NumberItems").GetComponent<TextMeshProUGUI>().text = new string(c_value.ToString());
         GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("$"+(c_value*price).ToString());
 
+    }
+
+    public void checkItemStock()
+    {
+        if (amountLeft == 0)
+        {
+            //GameObject parent= GameObject.Find(itemDetails.itemName);
+            GameObject soldSign = Instantiate(GameManager.Instance.soldoutPopUp);
+            soldSign.transform.localScale = Vector3.one;
+            soldSign.transform.localPosition = itemButton.transform.position;
+            itemButton.GetComponent<Button>().enabled = false;
+        }
     }
 
 }

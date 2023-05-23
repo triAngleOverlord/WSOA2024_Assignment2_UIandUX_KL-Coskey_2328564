@@ -8,13 +8,17 @@ public class ItemDetails : ScriptableObject
     [SerializeField] public float sellingPrice;
     [SerializeField] public float buyingPrice;
     [SerializeField] public string itemName;
-    [SerializeField] public float amountInShop;
+    [SerializeField] public float stockAmount;
 
+    [Header("Changing Variables")]
+    public float amountInShop;
     public float amountInStack;
     
 
-    public void Awake()
+    public void Start()
     {
-        amountInShop = 0;
+        amountInShop = stockAmount;
+        amountInStack = 0;
+
     }
 }

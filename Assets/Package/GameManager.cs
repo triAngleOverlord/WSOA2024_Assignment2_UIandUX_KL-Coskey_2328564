@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> chestSpaces;
     public static int currentChestSpace;
 
+    public ItemDetails[] _itemDetails;
+
 
     public void Awake()
     {
@@ -84,22 +86,22 @@ public class GameManager : MonoBehaviour
         itemPopUp.SetActive(false);
 
         currentChestSpace = 0;
-        
-                    //Resources.Load<GameObject>("ItemClicked");
+
+        //Resources.Load<GameObject>("ItemClicked");
 
         //Debug.Log(itemPopUp.name);
+
+        _itemDetails = Resources.LoadAll<ItemDetails>("ItemsInfo");
+        for (int i= 0; i < _itemDetails.Length;i++)
+        {
+            _itemDetails[i].Start();
+        }
 
 
     }
 
-    /*
-    public void checkItemStock()
-    {
-        if (GameObject.Find(c_itemName).GetComponent<ItemDetails>().amountLeft == 0)
-        {
-            GameObject.Find(c_itemName).SetActive(false);
-        }
-    }*/
+    
+    
 
     public void chestUpgrade(GameObject chest)
     {
