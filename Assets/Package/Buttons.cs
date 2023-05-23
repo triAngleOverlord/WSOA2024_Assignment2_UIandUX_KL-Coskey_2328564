@@ -9,16 +9,18 @@ public class Buttons : MonoBehaviour
     public GameObject p_Shop;
     public GameObject p_Chest;
     public GameObject p_Pop;
+    public GameObject p_Outside;
+    public GameObject b_return;
     public float c_Money;
 
     private void Awake()
     {
-        p_Backpack = GameObject.Find("Backpack");
-        p_Shop = GameObject.Find("Shop");
-        p_Chest = GameObject.Find("Chest");
+        p_Backpack = GameObject.Find("BACKPACK");
+        p_Shop = GameObject.Find("SHOP");
+        p_Chest = GameObject.Find("CHEST");
         p_Pop = GameObject.Find("ItemClicked");
-
-
+        p_Outside = GameObject.Find("OUTSIDE");
+        b_return = GameObject.Find("Return");
 
         c_Money = GameManager.moneyNow;
 
@@ -37,6 +39,9 @@ public class Buttons : MonoBehaviour
 
     public void openTheChest()
     {
+        b_return.SetActive(true);
+        p_Outside.SetActive(false);
+
         p_Shop.SetActive(false);
 
         p_Chest.SetActive(true);
@@ -50,6 +55,8 @@ public class Buttons : MonoBehaviour
 
     public void openTheShop()
     {
+        b_return.SetActive(true);
+        p_Outside.SetActive(false);
         if (p_Pop != false)
         {
             p_Pop.SetActive(false);
@@ -73,6 +80,10 @@ public class Buttons : MonoBehaviour
 
     public void openTheBackpack()
     {
+        b_return.SetActive(true);
+
+        p_Outside.SetActive(false);
+
         p_Chest.SetActive(false);
 
         p_Shop.SetActive(false);
@@ -84,7 +95,14 @@ public class Buttons : MonoBehaviour
 
     public void goOutside()
     {
+        b_return.SetActive(false);
 
+        p_Outside.SetActive(true);
+
+        p_Shop.SetActive(false);
+        p_Backpack.SetActive(false);
+        p_Chest.SetActive(false);
+        
     }
 
 }
