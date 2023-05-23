@@ -158,7 +158,7 @@ RectTransform:
   - {fileID: 6701059011836151573}
   - {fileID: 6701059011254050172}
   m_Father: {fileID: 6701059011923892254}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2738,8 +2738,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7140096861976328162}
   - {fileID: 42815096}
+  - {fileID: 7140096861976328162}
   m_Father: {fileID: 1263860670}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2931,10 +2931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e56324103e993419d7f5bda28a9dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDetails: {fileID: 0}
   itemName: 
   price: 0
   amountLeft: 0
-  itemDetails: {fileID: 0}
 --- !u!1 &7140096861976328161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,7 +2972,7 @@ RectTransform:
   - {fileID: 7140096863025156657}
   - {fileID: 7140096862752906902}
   m_Father: {fileID: 6701059011923892254}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4299,10 +4299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e56324103e993419d7f5bda28a9dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDetails: {fileID: 0}
   itemName: 
   price: 0
   amountLeft: 0
-  itemDetails: {fileID: 0}
 --- !u!1 &7140096863481188028
 GameObject:
   m_ObjectHideFlags: 0
