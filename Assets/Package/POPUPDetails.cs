@@ -48,7 +48,7 @@ public class POPUPDetails : MonoBehaviour
     public void setPopUp()
     {
         itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
-        popUpThing.transform.SetParent(transform);
+        //popUpThing.transform.SetParent(transform);
         popUpThing.transform.localPosition = Vector3.right * 200;
         //GameObject.Find("Slider").GetComponent<Slider>().value = 1;
 
@@ -62,7 +62,10 @@ public class POPUPDetails : MonoBehaviour
 
         GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
-        
+        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string ("$"+ price.ToString());
+        GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string (amountLeft.ToString());
+
+
 
     }
 

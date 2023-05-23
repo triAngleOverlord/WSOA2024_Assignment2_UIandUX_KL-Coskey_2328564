@@ -7,9 +7,11 @@ public class ItemDetails : ScriptableObject
 {
     [SerializeField] public float sellingPrice;
     [SerializeField] public float buyingPrice;
+    [SerializeField] public string itemName;
+    [SerializeField] public float amountInShop;
 
     public float amountInStack;
-    [SerializeField] public float amountInShop;
+    
 
     public void Awake()
     {
