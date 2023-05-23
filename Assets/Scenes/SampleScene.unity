@@ -599,9 +599,8 @@ GameObject:
   - component: {fileID: 903800894}
   - component: {fileID: 903800893}
   - component: {fileID: 903800892}
-  - component: {fileID: 903800891}
   m_Layer: 5
-  m_Name: Chest Upgrade
+  m_Name: Chest Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,20 +627,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &903800891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903800889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6538005f35f9c284099d775575ff7fb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _item: {fileID: 4930772770919333931, guid: 73c4d42d9491d5548be43c550fb5b60e, type: 3}
-  itemDetails: {fileID: 11400000, guid: d28d6a9a1e686a6449524b362f2edbae, type: 2}
 --- !u!114 &903800892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +671,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 903800891}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BoughtItem, Assembly-CSharp
         m_MethodName: itemIntoBag
         m_Mode: 1
@@ -1348,6 +1333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shroom
       objectReference: {fileID: 0}
+    - target: {fileID: 423904897101052639, guid: 78b370b479bb3074aa341e2d5f43bca2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78b370b479bb3074aa341e2d5f43bca2, type: 3}
 --- !u!212 &460715620277607829
@@ -1448,7 +1437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hat
+  m_text: Dagger
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1583,7 +1572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bread
+  m_text: Scroll
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1767,6 +1756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Feather
       objectReference: {fileID: 0}
+    - target: {fileID: 723669683479405897, guid: 8acc567fc52e8234ca0369f5de992014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8acc567fc52e8234ca0369f5de992014, type: 3}
 --- !u!1001 &1207646082897922478
@@ -1863,6 +1856,10 @@ PrefabInstance:
     - target: {fileID: 1207646083794756695, guid: fcfdb7148c6ec2f43b2ad9d1ca8abc18, type: 3}
       propertyPath: m_Name
       value: Diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207646083794756695, guid: fcfdb7148c6ec2f43b2ad9d1ca8abc18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcfdb7148c6ec2f43b2ad9d1ca8abc18, type: 3}
@@ -1961,6 +1958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 1344978682427896199, guid: f35a74aa2acd90e4e8048ea25cb8ac2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f35a74aa2acd90e4e8048ea25cb8ac2f, type: 3}
 --- !u!4 &1634329400374637909
@@ -1989,6 +1990,10 @@ PrefabInstance:
     - target: {fileID: 1991162029770056572, guid: 76ecae4eb57e86f4986594cc6305f06b, type: 3}
       propertyPath: m_Name
       value: Ink
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991162029770056572, guid: 76ecae4eb57e86f4986594cc6305f06b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1991162029770056573, guid: 76ecae4eb57e86f4986594cc6305f06b, type: 3}
       propertyPath: m_Pivot.x
@@ -2086,6 +2091,10 @@ PrefabInstance:
     - target: {fileID: 6598620902025870114, guid: 361e2ce0b995b5b4eb5b12bd6c382488, type: 3}
       propertyPath: m_Name
       value: Chest Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598620902025870114, guid: 361e2ce0b995b5b4eb5b12bd6c382488, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6598620902025870115, guid: 361e2ce0b995b5b4eb5b12bd6c382488, type: 3}
       propertyPath: m_Pivot.x
@@ -2268,6 +2277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whale Dreams
       objectReference: {fileID: 0}
+    - target: {fileID: 3276260438649275201, guid: a6fadb8864dcc5640a757876b429b38b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6fadb8864dcc5640a757876b429b38b, type: 3}
 --- !u!1001 &3795392126329296534
@@ -2280,6 +2293,10 @@ PrefabInstance:
     - target: {fileID: 3795392127066888864, guid: 00cfd3b12604ba84899001c404501eaf, type: 3}
       propertyPath: m_Name
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795392127066888864, guid: 00cfd3b12604ba84899001c404501eaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3795392127066888865, guid: 00cfd3b12604ba84899001c404501eaf, type: 3}
       propertyPath: m_Pivot.x
@@ -2805,6 +2822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ribbon
       objectReference: {fileID: 0}
+    - target: {fileID: 5008907319597870676, guid: 41d62d97a8a522144bab6fdea598c2fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5008907319597870679, guid: 41d62d97a8a522144bab6fdea598c2fc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3117,6 +3138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
+    - target: {fileID: 5926220228867769361, guid: adaf2dd68202d7249958693abdb88892, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5926220228867769362, guid: adaf2dd68202d7249958693abdb88892, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3230,6 +3255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick
       objectReference: {fileID: 0}
+    - target: {fileID: 6063552272486309346, guid: 0f0ba88cc10b0c244b5c27c73bcdb7f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6063552272486309347, guid: 0f0ba88cc10b0c244b5c27c73bcdb7f4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3336,7 +3365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Box
+  m_text: Diamond
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3546,6 +3575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scroll
       objectReference: {fileID: 0}
+    - target: {fileID: 6360917236074415729, guid: 9d6d0d61a614d5d4393a2e683b84147b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6d0d61a614d5d4393a2e683b84147b, type: 3}
 --- !u!1001 &6521779437895711990
@@ -3642,6 +3675,10 @@ PrefabInstance:
     - target: {fileID: 6521779438485150805, guid: 4c4f0bf64fd153c47beb6719e8724741, type: 3}
       propertyPath: m_Name
       value: Dagger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521779438485150805, guid: 4c4f0bf64fd153c47beb6719e8724741, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4f0bf64fd153c47beb6719e8724741, type: 3}
@@ -4550,8 +4587,9 @@ GameObject:
   - component: {fileID: 6701059010939492685}
   - component: {fileID: 6701059010939492684}
   - component: {fileID: 6701059010939492687}
+  - component: {fileID: 6701059010939492688}
   m_Layer: 5
-  m_Name: Box
+  m_Name: Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4610,8 +4648,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6701059010939492687}
-        m_TargetAssemblyTypeName: BoughtItem, Assembly-CSharp
-        m_MethodName: itemIntoBag
+        m_TargetAssemblyTypeName: POPUPDetails, Assembly-CSharp
+        m_MethodName: thisItemSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4681,11 +4719,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 6701059010939492673}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfe165d70d6a654fbfb1b6edc8b1f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 0
+  amountLeft: 0
+  itemDetails: {fileID: 11400000, guid: 77d002345f679a04fad53bc00e668cc5, type: 2}
+  buyStuff: {fileID: 0}
+  popUpThing: {fileID: 0}
+--- !u!114 &6701059010939492688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701059010939492673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6538005f35f9c284099d775575ff7fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _item: {fileID: 3164864356473133770, guid: 0bd7416eda00eab4bb95bf3d0d80532f, type: 3}
-  itemDetails: {fileID: 11400000, guid: 77d002345f679a04fad53bc00e668cc5, type: 2}
+  _item: {fileID: 0}
+  item: {fileID: 0}
+  itemDetails: {fileID: 0}
 --- !u!222 &6701059011254050168
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4738,7 +4794,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6701059011254050173}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BoughtItem, Assembly-CSharp
         m_MethodName: itemIntoBag
         m_Mode: 1
@@ -4801,20 +4857,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6701059011254050173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701059011254050175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6538005f35f9c284099d775575ff7fb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _item: {fileID: 1460706416268843551, guid: 8c7a9d5618701c840a2369cd8cae1110, type: 3}
-  itemDetails: {fileID: 11400000, guid: c6b653a5d25420747bbfe5b78b9a3781, type: 2}
 --- !u!1 &6701059011254050175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4827,9 +4869,8 @@ GameObject:
   - component: {fileID: 6701059011254050168}
   - component: {fileID: 6701059011254050171}
   - component: {fileID: 6701059011254050170}
-  - component: {fileID: 6701059011254050173}
   m_Layer: 5
-  m_Name: Hat
+  m_Name: Dagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4873,20 +4914,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6701059011836151572}
   m_CullTransparentMesh: 1
---- !u!114 &6701059011836151570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701059011836151572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6538005f35f9c284099d775575ff7fb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _item: {fileID: 7910381191510624797, guid: 5cc747921c37afc4589de0f0a22391d9, type: 3}
-  itemDetails: {fileID: 11400000, guid: 881a19111dfd3e74e90b41e215d65cd9, type: 2}
 --- !u!114 &6701059011836151571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4931,18 +4958,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6701059011836151570}
-        m_TargetAssemblyTypeName: BoughtItem, Assembly-CSharp
-        m_MethodName: itemIntoBag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6701059011836151582}
         m_TargetAssemblyTypeName: POPUPDetails, Assembly-CSharp
         m_MethodName: thisItemSelected
@@ -4967,10 +4982,9 @@ GameObject:
   - component: {fileID: 6701059011836151569}
   - component: {fileID: 6701059011836151568}
   - component: {fileID: 6701059011836151571}
-  - component: {fileID: 6701059011836151570}
   - component: {fileID: 6701059011836151582}
   m_Layer: 5
-  m_Name: Bread
+  m_Name: Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6876,6 +6890,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CD
       objectReference: {fileID: 0}
+    - target: {fileID: 7617442716386397868, guid: 7446a28218a6cdf498763b59d0f4bbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7617442716386397869, guid: 7446a28218a6cdf498763b59d0f4bbfd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7041,6 +7059,10 @@ PrefabInstance:
     - target: {fileID: 8231546242910819538, guid: 1ef64d598b46b454096f7e9f24e75f46, type: 3}
       propertyPath: m_Name
       value: Mirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231546242910819538, guid: 1ef64d598b46b454096f7e9f24e75f46, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231546242910819539, guid: 1ef64d598b46b454096f7e9f24e75f46, type: 3}
       propertyPath: m_Pivot.x

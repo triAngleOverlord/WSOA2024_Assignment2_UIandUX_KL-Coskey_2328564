@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
-  m_Name: Bread
+  m_Name: Dagger
   m_EditorClassIdentifier: 
-  sellingPrice: 2
-  buyingPrice: 4
-  itemName: Bread
-  stockAmount: 5
+  sellingPrice: 15
+  buyingPrice: 20
+  itemName: Dagger
+  stockAmount: 4
+  itemObject: {fileID: 6521779438485150805, guid: 4c4f0bf64fd153c47beb6719e8724741, type: 3}
   amountInShop: 0
-  amountInStack: 3
+  amountInStack: 0

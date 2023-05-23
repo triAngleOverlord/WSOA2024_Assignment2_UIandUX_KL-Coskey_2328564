@@ -6,10 +6,16 @@ using static UnityEditor.Progress;
 
 public class BoughtItem : MonoBehaviour
 {
-    [SerializeField] private GameObject _item;
-    private GameObject item;
+    public GameObject _item;
+    public GameObject item;
 
     public ItemDetails itemDetails;
+
+    public void Awake()
+    {
+        //_item = gameObject.transform.GetComponent<Purchase>().itemDetails.itemObject;
+        //itemIntoBag();
+    }
     public void itemIntoBag()
     {
         //GameObject bag = GameObject.Find("BackPack");
@@ -20,13 +26,23 @@ public class BoughtItem : MonoBehaviour
         if (existingItemSlot == null)
         {
             GameObject[] slots = GameObject.FindGameObjectsWithTag("Avaliable");
-            GameObject item = Instantiate(_item, slots[0].transform);
-            slots[0].tag = item.tag;
-            item.tag = "Untagged";
+            if (slots != null)
+            {
+                GameObject item = Instantiate(_item, slots[0].transform);
+                slots[0].tag = item.tag;
+                item.tag = "Untagged";
 
-            itemDetails.amountInStack++;
-            item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
-        
+                itemDetails.amountInStack++;
+                item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+            
+
+            }
+
+            else
+            {
+                Debug.Log("There is no more space in your backpack");
+            }
+            
             //item.gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
         }
 

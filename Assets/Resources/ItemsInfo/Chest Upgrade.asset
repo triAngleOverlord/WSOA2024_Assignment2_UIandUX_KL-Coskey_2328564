@@ -16,5 +16,6 @@ MonoBehaviour:
   buyingPrice: 15
   itemName: Chest Upgrade
   stockAmount: 1
+  itemObject: {fileID: 6598620902025870114, guid: 361e2ce0b995b5b4eb5b12bd6c382488, type: 3}
   amountInShop: 4
   amountInStack: 1

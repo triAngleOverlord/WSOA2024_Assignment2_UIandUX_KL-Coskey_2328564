@@ -13,6 +13,7 @@ public class POPUPDetails : MonoBehaviour
 
     public ItemDetails itemDetails;
 
+
     public Purchase buyStuff;
     public GameObject popUpThing;
 
@@ -49,7 +50,7 @@ public class POPUPDetails : MonoBehaviour
 
     public void setPopUp()
     {
-        itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
+        //itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
         //popUpThing.transform.SetParent(transform);
         popUpThing.transform.localPosition = Vector3.right * 200;
         //GameObject.Find("Slider").GetComponent<Slider>().value = 1;
