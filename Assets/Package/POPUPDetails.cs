@@ -49,7 +49,7 @@ public class POPUPDetails : MonoBehaviour
     {
         itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
         popUpThing.transform.SetParent(transform);
-        popUpThing.transform.localPosition = Vector3.right * 50;
+        popUpThing.transform.localPosition = Vector3.right * 200;
         //GameObject.Find("Slider").GetComponent<Slider>().value = 1;
 
         //buyStuff = GameObject.Find("BuyButton").GetComponent<BuyingPopUp>();
