@@ -2908,8 +2908,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7140096861578770676}
-        m_TargetAssemblyTypeName: BuyingPopUp, Assembly-CSharp
-        m_MethodName: showAmountItems
+        m_TargetAssemblyTypeName: Purchase, Assembly-CSharp
+        m_MethodName: sliderAmount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

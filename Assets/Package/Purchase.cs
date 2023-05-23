@@ -26,18 +26,11 @@ public class Purchase : MonoBehaviour
         itemName = itemDetails.itemName;
         price = itemDetails.buyingPrice;
         amountLeft = itemDetails.amountInShop;
-        /*GameManager.c_itemName= itemName;
-        GameManager.c_itemPrice= price;
-        GameManager.c_itemAmount= amountLeft;
-       
-       Debug.Log(price);
-       Debug.Log(itemName);
-       Debug.Log(amountLeft);
-       */
+        
 
         var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
-        float enoughMoney = GameManager.moneyNow - price * c_value;
-        GameObject.Find("Avaliable").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());
+        float enoughMoney = GameManager.moneyNow - (price * c_value);
+        //GameObject.Find("Avaliable").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());
 
         if (enoughMoney > 0 || enoughMoney == 0 )
         {
@@ -46,14 +39,15 @@ public class Purchase : MonoBehaviour
             Debug.Log("Just bought " + c_value + "x " +itemName + " for only $" + price * c_value);
 
             GameObject.Find("Slider").GetComponent<Slider>().value = 1;
-            GameManager.c_itemAmount = amountLeft;
+            itemDetails.amountInShop = amountLeft;
+            //GameManager.c_itemAmount = amountLeft;
             //Debug.Log(amountLeft + " gm says:" + GameManager.c_itemAmount);
 
-            GameObject.Find(itemName).GetComponent<POPUPDetails>().amountLeft = GameManager.c_itemAmount;
+            //GameObject.Find(itemName).GetComponent<POPUPDetails>().amountLeft = GameManager.c_itemAmount;
 
             GameObject.Find("Money").GetComponent<TextMeshProUGUI>().text = GameManager.moneyNow.ToString();
-
-            
+            GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());
+            GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
 
         }
 
@@ -72,7 +66,7 @@ public class Purchase : MonoBehaviour
     {
         //amountLeft = itemDetails.amountInShop;
         price = itemDetails.buyingPrice;
-        //GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
+        
         var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
         GameObject.Find("NumberItems").GetComponent<TextMeshProUGUI>().text = new string(c_value.ToString());
         GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("$"+(c_value*price).ToString());
