@@ -31,6 +31,8 @@ public class Purchase : MonoBehaviour
         price = itemDetails.buyingPrice;
         amountLeft = itemDetails.amountInShop;
         _itemObject = itemDetails.itemObject;
+
+        BoughtItem bought = GameObject.Find(itemName).GetComponent<BoughtItem>();
         
 
         var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
@@ -55,8 +57,8 @@ public class Purchase : MonoBehaviour
             GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
             GameObject.Find("ItemClicked").SetActive(false);
             //Debug.Log(GameObject.Find(itemName).name);
-            GameObject.Find(itemName).GetComponent<BoughtItem>().valueSelected = c_value;
-            GameObject.Find(itemName).GetComponent<BoughtItem>().itemIntoBag();
+            bought.valueSelected = c_value;
+            bought.itemIntoBag();
             
         }
 
@@ -78,7 +80,7 @@ public class Purchase : MonoBehaviour
         
         var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
         GameObject.Find("NumberItems").GetComponent<TextMeshProUGUI>().text = new string(c_value.ToString());
-        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("$"+(c_value*price).ToString());
+        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("-$"+(c_value*price).ToString());
 
     }
 
@@ -86,10 +88,11 @@ public class Purchase : MonoBehaviour
     {
         if (amountLeft == 0)
         {
-            //GameObject parent= GameObject.Find(itemDetails.itemName);
+            GameObject parent= GameObject.Find(itemDetails.itemName);
             GameObject soldSign = Instantiate(GameManager.Instance.soldoutPopUp);
+            soldSign.transform.SetParent(parent.transform, true);
             //soldSign.transform.localScale = Vector3.one;
-            soldSign.transform.localPosition = itemButton.transform.position;
+            soldSign.transform.localPosition = Vector3.zero;
             itemButton.GetComponent<Button>().enabled = false;
         }
     }

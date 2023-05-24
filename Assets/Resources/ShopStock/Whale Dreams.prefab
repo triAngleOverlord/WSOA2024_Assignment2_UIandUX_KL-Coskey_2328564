@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7341052591772024501}
   - component: {fileID: -7361016129844976261}
   m_Layer: 5
-  m_Name: Whale Dreams
+  m_Name: whale Dreams
   m_TagString: Whale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

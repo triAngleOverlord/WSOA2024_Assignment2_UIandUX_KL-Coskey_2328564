@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
-  m_Name: Mushroom
+  m_Name: Whale Dreams
   m_EditorClassIdentifier: 
-  itemName: Normal shroom
-  sellingPrice: 65
-  buyingPrice: 65
-  stockAmount: 7
-  itemObject: {fileID: 423904897101052639, guid: 78b370b479bb3074aa341e2d5f43bca2, type: 3}
+  itemName: Whale Dreams
+  sellingPrice: 2
+  buyingPrice: 5
+  stockAmount: 4
+  itemObject: {fileID: 3276260438649275201, guid: a6fadb8864dcc5640a757876b429b38b, type: 3}
   amountInShop: 0
   amountInStack: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6267991400562961286}
   - component: {fileID: -7658963050904726682}
   m_Layer: 5
-  m_Name: Ink
+  m_Name: ink
   m_TagString: Ink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: -3553000043763807956}
   - component: {fileID: 4957983969609734475}
   m_Layer: 5
-  m_Name: Feather
+  m_Name: feather
   m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

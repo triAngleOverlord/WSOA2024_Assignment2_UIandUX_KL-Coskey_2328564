@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 751700329820171234}
   - component: {fileID: 8027985741231323609}
   m_Layer: 5
-  m_Name: CD
+  m_Name: cd
   m_TagString: CD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

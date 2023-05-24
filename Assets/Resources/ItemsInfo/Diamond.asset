@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
   m_Name: Diamond
   m_EditorClassIdentifier: 
+  itemName: Diamond
   sellingPrice: 30
   buyingPrice: 35
-  itemName: Diamond
-  stockAmount: 2
+  stockAmount: 1
   itemObject: {fileID: 1207646083794756695, guid: fcfdb7148c6ec2f43b2ad9d1ca8abc18, type: 3}
-  amountInShop: 0
+  amountInShop: 1
   amountInStack: 0

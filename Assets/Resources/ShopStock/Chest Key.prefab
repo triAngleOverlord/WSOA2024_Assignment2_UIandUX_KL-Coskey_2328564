@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 282301699}
   - component: {fileID: 282301698}
   m_Layer: 5
-  m_Name: Chest Key
+  m_Name: chest Key
   m_TagString: Chest Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

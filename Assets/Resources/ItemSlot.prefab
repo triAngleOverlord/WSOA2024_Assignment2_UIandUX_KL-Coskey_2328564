@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6485251908910600666}
   m_Layer: 2
   m_Name: ItemSlot
-  m_TagString: Untagged
+  m_TagString: Avaliable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
