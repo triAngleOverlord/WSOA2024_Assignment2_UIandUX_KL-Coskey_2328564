@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
   m_Name: Scroll
   m_EditorClassIdentifier: 
+  itemName: Scroll
   sellingPrice: 4
   buyingPrice: 5
-  itemName: Scroll
   stockAmount: 20
   itemObject: {fileID: 6360917236074415729, guid: 9d6d0d61a614d5d4393a2e683b84147b, type: 3}
   amountInShop: 0
-  amountInStack: 3
+  amountInStack: 0

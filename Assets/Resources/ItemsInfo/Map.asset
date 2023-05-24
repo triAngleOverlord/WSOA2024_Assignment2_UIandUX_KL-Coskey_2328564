@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
-  m_Name: Chest Upgrade
+  m_Name: Map
   m_EditorClassIdentifier: 
-  itemName: Chest Upgrade
-  sellingPrice: 0
-  buyingPrice: 15
+  itemName: Treasure Map
+  sellingPrice: 201
+  buyingPrice: 100
   stockAmount: 1
-  itemObject: {fileID: 6598620902025870114, guid: 361e2ce0b995b5b4eb5b12bd6c382488, type: 3}
+  itemObject: {fileID: 3795392127066888864, guid: 00cfd3b12604ba84899001c404501eaf, type: 3}
   amountInShop: 0
   amountInStack: 0

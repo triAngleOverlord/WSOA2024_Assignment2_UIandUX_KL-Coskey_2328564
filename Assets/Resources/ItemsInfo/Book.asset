@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
-  m_Name: Chest Upgrade
+  m_Name: Book
   m_EditorClassIdentifier: 
-  itemName: Chest Upgrade
-  sellingPrice: 0
-  buyingPrice: 15
-  stockAmount: 1
-  itemObject: {fileID: 6598620902025870114, guid: 361e2ce0b995b5b4eb5b12bd6c382488, type: 3}
+  itemName: Old Book
+  sellingPrice: 100
+  buyingPrice: 90
+  stockAmount: 2
+  itemObject: {fileID: 5926220228867769361, guid: adaf2dd68202d7249958693abdb88892, type: 3}
   amountInShop: 0
   amountInStack: 0
