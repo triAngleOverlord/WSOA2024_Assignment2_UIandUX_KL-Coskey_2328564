@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class BoughtItem : MonoBehaviour
 {
@@ -56,7 +52,7 @@ public class BoughtItem : MonoBehaviour
         {
             item = existingItemSlot.gameObject.transform.GetChild(0).gameObject;
             itemDetails.amountInStack += valueSelected;
-            item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+            existingItemSlot.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
             //GameObject item = Instantiate(_item, parentItem.transform);
 
             //parentItem.tag = item.tag;
