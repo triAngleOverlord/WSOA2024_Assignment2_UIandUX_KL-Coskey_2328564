@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler ,IEndDragHandler
+public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler ,IEndDragHandler, IDropHandler
 {
-    [SerializeField] Canvas canvas;
+    public Canvas canvas;
 
     public GameObject originalSlot;
     public GameObject newSlot;
@@ -13,22 +14,54 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
     public RectTransform itemRect;
     public CanvasGroup itemCanvasGp;
 
+    public ItemDetails itemDetails;
     public void Awake()
     {
         itemRect = GetComponent<RectTransform>();
         itemCanvasGp = GetComponent<CanvasGroup>();
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        /*
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             Debug.Log(transform.name + " has been left-clicked");
-        }
+        }*/
 
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             Debug.Log(transform.name + " has been right-clicked");
+
+            if (itemDetails.amountInStack > 1)
+            {
+                GameObject[] slots = GameObject.FindGameObjectsWithTag("Avaliable");
+                    if (slots != null)
+                    {
+                        GameObject splitItem = Instantiate(itemDetails.itemObject, slots[0].transform);
+                        splitItem.transform.localPosition = Vector3.zero;
+                        slots[0].tag = splitItem.tag;
+
+                        itemDetails.amountInStack--;
+                        transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+                        splitItem.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(1.ToString());
+
+
+            }
+
+                    else
+                    {
+                        Debug.Log("There is no more space in your backpack");
+                    }
+
+            }
+
+            else
+            {
+                Debug.Log("You cannot split stack anymore");
+            }
+            
         }
 
     }
@@ -69,6 +102,25 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
         
     }
 
-    
+    public void OnDrop(PointerEventData eventData)
+    {
+        Debug.Log(transform.name + " detected an OnDrop");
 
+        if (eventData.pointerDrag != null)
+        {
+            if(eventData.pointerDrag.transform.tag == transform.tag)
+            {
+                Destroy(eventData.pointerDrag);
+                itemDetails.amountInStack++;
+                transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+
+            }
+
+            else
+            {
+                Debug.Log("Items do not match");
+            }
+            
+        }
+    }
 }

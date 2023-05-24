@@ -35,8 +35,8 @@ public class BoughtItem : MonoBehaviour
                 GameObject item = Instantiate(_item, slots[0].transform);
                 item.transform.localPosition = Vector3.zero;
                 slots[0].tag = item.tag;
-                Debug.Log(item.tag);
-                item.tag = "Untagged";
+                //Debug.Log(item.tag);
+                //item.tag = "Untagged";
 
                 itemDetails.amountInStack += valueSelected;
                 item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
