@@ -5,9 +5,21 @@ TagManager:
   serializedVersion: 2
   tags:
   - Avaliable
-  - Bread
-  - Hat
-  - Box
+  - Diamond
+  - Chest Key
+  - Scroll
+  - Dagger
+  - Book
+  - Shield
+  - Stick
+  - Map
+  - Feather
+  - Shroom
+  - Ink
+  - CD
+  - Mirror
+  - Whale
+  - Ribbon
   layers:
   - Default
   - TransparentFX

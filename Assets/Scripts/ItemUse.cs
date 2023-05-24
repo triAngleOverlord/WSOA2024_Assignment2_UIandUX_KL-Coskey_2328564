@@ -21,19 +21,19 @@ public class ItemUse : MonoBehaviour
         if (popUpThing.activeSelf == false)
         {
             popUpThing.SetActive(true);
-            setPopUp();
+            setPopUp_Sell();
 
         }
 
         else
         {
-            setPopUp();
+            setPopUp_Sell();
         }
 
 
     }
 
-    public void setPopUp()
+    public void setPopUp_Sell()
     {
         itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
         //popUpThing.transform.SetParent(transform);
@@ -48,12 +48,12 @@ public class ItemUse : MonoBehaviour
         //GameManager.c_itemPrice = price;
         //GameManager.c_itemAmount = amountLeft;
 
-        GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
+        GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string("Sell "+transform.name);
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountStack;
         GameObject.Find("Slider").GetComponent<Purchase>().itemDetails = itemDetails;
         GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemDetails = itemDetails;
         GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemButton = this.gameObject;
-        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("$" + _sellPrice.ToString());
+        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("+$" + _sellPrice.ToString());
         GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string(amountStack.ToString());
 
 

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEditor.Progress;
 
 public class BoughtItem : MonoBehaviour
 {
     public GameObject _item;
     public GameObject item;
+    public float valueSelected;
 
     public ItemDetails itemDetails;
 
@@ -18,8 +20,10 @@ public class BoughtItem : MonoBehaviour
     }
     public void itemIntoBag()
     {
+        _item = itemDetails.itemObject;
         //GameObject bag = GameObject.Find("BackPack");
         GameObject existingItemSlot = GameObject.FindGameObjectWithTag(_item.tag);
+        //valueSelected= GameObject.Find("Slider").GetComponent<Slider>().value;
        // Debug.Log(_item.tag);
         //Debug.Log(parentItem.tag);
 
@@ -29,10 +33,12 @@ public class BoughtItem : MonoBehaviour
             if (slots != null)
             {
                 GameObject item = Instantiate(_item, slots[0].transform);
+                item.transform.localPosition = Vector3.zero;
                 slots[0].tag = item.tag;
+                Debug.Log(item.tag);
                 item.tag = "Untagged";
 
-                itemDetails.amountInStack++;
+                itemDetails.amountInStack += valueSelected;
                 item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
             
 
@@ -49,8 +55,8 @@ public class BoughtItem : MonoBehaviour
         else
         {
             item = existingItemSlot.gameObject.transform.GetChild(0).gameObject;
-            itemDetails.amountInStack++;
-            item.gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+            itemDetails.amountInStack += valueSelected;
+            item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
             //GameObject item = Instantiate(_item, parentItem.transform);
 
             //parentItem.tag = item.tag;

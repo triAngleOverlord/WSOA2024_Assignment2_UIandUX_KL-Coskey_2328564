@@ -63,13 +63,18 @@ public class POPUPDetails : MonoBehaviour
         //GameManager.c_itemPrice = price;
         //GameManager.c_itemAmount = amountLeft;
 
-        GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
+        GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string("Buy "+transform.name);
+
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
+        GameObject.Find("Slider").GetComponent<Slider>().value = 1;
         GameObject.Find("Slider").GetComponent<Purchase>().itemDetails = itemDetails;
+
         GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemDetails = itemDetails;
         GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemButton = this.gameObject;
-        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string ("$"+ price.ToString());
+
+        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string ("-$"+ price.ToString());
         GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string (amountLeft.ToString());
+        transform.GetComponent<BoughtItem>().itemDetails = itemDetails;
 
 
 

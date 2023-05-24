@@ -10,6 +10,7 @@ public class Purchase : MonoBehaviour
     public string itemName;
     public float price;
     public float amountLeft;
+    public GameObject _itemObject;
 
     public GameObject itemButton;
     //public BoughtItem boughtItem;
@@ -29,6 +30,7 @@ public class Purchase : MonoBehaviour
         itemName = itemDetails.itemName;
         price = itemDetails.buyingPrice;
         amountLeft = itemDetails.amountInShop;
+        _itemObject = itemDetails.itemObject;
         
 
         var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
@@ -52,9 +54,10 @@ public class Purchase : MonoBehaviour
             GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());
             GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
             GameObject.Find("ItemClicked").SetActive(false);
+            //Debug.Log(GameObject.Find(itemName).name);
+            GameObject.Find(itemName).GetComponent<BoughtItem>().valueSelected = c_value;
+            GameObject.Find(itemName).GetComponent<BoughtItem>().itemIntoBag();
             
-            gameObject.GetComponent<BoughtItem>()._item = itemDetails.itemObject;
-            gameObject.GetComponent<BoughtItem>().itemIntoBag();
         }
 
         else
