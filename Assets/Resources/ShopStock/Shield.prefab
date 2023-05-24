@@ -148,6 +148,8 @@ GameObject:
   - component: {fileID: 1344978682427896195}
   - component: {fileID: 1344978682427896196}
   - component: {fileID: 1344978682427896197}
+  - component: {fileID: -4763616585390739672}
+  - component: {fileID: -5592260991141687328}
   m_Layer: 5
   m_Name: Shield
   m_TagString: Shield
@@ -287,6 +289,36 @@ MonoBehaviour:
   itemDetails: {fileID: 0}
   buyStuff: {fileID: 0}
   popUpThing: {fileID: 0}
+--- !u!114 &-4763616585390739672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344978682427896199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18559079ceaa2a949a4b36fe7962a75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  originalSlot: {fileID: 0}
+  newSlot: {fileID: 0}
+  itemRect: {fileID: 0}
+  itemCanvasGp: {fileID: 0}
+  itemDetails: {fileID: 11400000, guid: 67ba2b3452bfd144a906f4ac3a951c4f, type: 2}
+--- !u!225 &-5592260991141687328
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344978682427896199}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1344978683128604301
 GameObject:
   m_ObjectHideFlags: 0

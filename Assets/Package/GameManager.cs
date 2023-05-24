@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         itemPopUp = GameObject.Find("ItemClicked");
         soldoutPopUp = Resources.Load<GameObject>("SOLDOUT");
-        slotUpgrade = Resources.Load<GameObject>("Slot");
+        slotUpgrade = Resources.Load<GameObject>("ItemSlot");
 
         _PopUpDetails =GameObject.FindObjectsByType<POPUPDetails>(FindObjectsSortMode.InstanceID);
         for (int i = 0; i < _PopUpDetails.Length; i++)

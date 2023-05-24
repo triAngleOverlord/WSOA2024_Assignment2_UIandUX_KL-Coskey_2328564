@@ -148,6 +148,8 @@ GameObject:
   - component: {fileID: 3795392127066888876}
   - component: {fileID: 3795392127066888879}
   - component: {fileID: 3795392127066888878}
+  - component: {fileID: 6400731483666307347}
+  - component: {fileID: -5059933031817735931}
   m_Layer: 5
   m_Name: Map
   m_TagString: Map
@@ -287,6 +289,36 @@ MonoBehaviour:
   itemDetails: {fileID: 0}
   buyStuff: {fileID: 0}
   popUpThing: {fileID: 0}
+--- !u!114 &6400731483666307347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795392127066888864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18559079ceaa2a949a4b36fe7962a75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  originalSlot: {fileID: 0}
+  newSlot: {fileID: 0}
+  itemRect: {fileID: 0}
+  itemCanvasGp: {fileID: 0}
+  itemDetails: {fileID: 11400000, guid: a35af702cc4a8c3468a7ccbef10b64b3, type: 2}
+--- !u!225 &-5059933031817735931
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795392127066888864}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3795392127611194850
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 423904897101052635}
   - component: {fileID: 423904897101052634}
   - component: {fileID: 423904897101052637}
+  - component: {fileID: -2167229184695186447}
+  - component: {fileID: -7773705040895432401}
   m_Layer: 5
   m_Name: Shroom
   m_TagString: Shroom
@@ -152,6 +154,36 @@ MonoBehaviour:
   itemDetails: {fileID: 0}
   buyStuff: {fileID: 0}
   popUpThing: {fileID: 0}
+--- !u!114 &-2167229184695186447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423904897101052639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18559079ceaa2a949a4b36fe7962a75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  originalSlot: {fileID: 0}
+  newSlot: {fileID: 0}
+  itemRect: {fileID: 0}
+  itemCanvasGp: {fileID: 0}
+  itemDetails: {fileID: 11400000, guid: a0168de81af5b90439027b5b39726594, type: 2}
+--- !u!225 &-7773705040895432401
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423904897101052639}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &423904897615543387
 GameObject:
   m_ObjectHideFlags: 0

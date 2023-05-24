@@ -260,6 +260,8 @@ GameObject:
   - component: {fileID: 5008907319597870672}
   - component: {fileID: 5008907319597870673}
   - component: {fileID: 5008907319597870678}
+  - component: {fileID: 350496732744603931}
+  - component: {fileID: -6905634682277388204}
   m_Layer: 5
   m_Name: Ribbon
   m_TagString: Ribbon
@@ -399,3 +401,33 @@ MonoBehaviour:
   itemDetails: {fileID: 0}
   buyStuff: {fileID: 0}
   popUpThing: {fileID: 0}
+--- !u!114 &350496732744603931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008907319597870676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18559079ceaa2a949a4b36fe7962a75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  originalSlot: {fileID: 0}
+  newSlot: {fileID: 0}
+  itemRect: {fileID: 0}
+  itemCanvasGp: {fileID: 0}
+  itemDetails: {fileID: 11400000, guid: 0321de49d41c6e54a9710c92584c18d8, type: 2}
+--- !u!225 &-6905634682277388204
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008907319597870676}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
