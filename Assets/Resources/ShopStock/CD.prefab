@@ -407,6 +407,7 @@ MonoBehaviour:
   itemRect: {fileID: 0}
   itemCanvasGp: {fileID: 0}
   itemDetails: {fileID: 11400000, guid: e07e2d5afd219664fa823b5e0356ba6a, type: 2}
+  amountStack: 0
 --- !u!225 &8027985741231323609
 CanvasGroup:
   m_ObjectHideFlags: 0
