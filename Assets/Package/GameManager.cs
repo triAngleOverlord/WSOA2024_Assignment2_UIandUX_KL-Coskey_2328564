@@ -68,9 +68,10 @@ public class GameManager : MonoBehaviour
             chestSpaces.Add(child.transform);
         }
 
-        foreach (Transform itemChild in GameObject.Find("Shop_Slots").transform)
+        foreach (Transform itemChild in GameObject.Find("Slots_Shop").transform)
         {
             shopItems.Add(itemChild.transform);
+            itemChild.gameObject.SetActive(false);
         }
                     //Resources.Load<GameObject>("ItemClicked");
 
