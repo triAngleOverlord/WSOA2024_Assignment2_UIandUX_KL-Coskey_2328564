@@ -54,6 +54,7 @@ public class Buttons : MonoBehaviour
 
     public void openTheShop()
     {
+        GameManager.shopClicks++;
         b_Return.SetActive(true);
         p_Outside.SetActive(false);
         if (p_Pop != false)
