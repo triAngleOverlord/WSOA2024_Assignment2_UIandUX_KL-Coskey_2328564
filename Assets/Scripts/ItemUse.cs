@@ -126,6 +126,7 @@ public class ItemUse : MonoBehaviour
     {
         if (sellingItem.GetComponent<ItemMouseEvents>().amountStack == 0)
         {
+            sellingItem.transform.parent.tag = "Avaliable";
             Destroy(sellingItem);
         }
     }

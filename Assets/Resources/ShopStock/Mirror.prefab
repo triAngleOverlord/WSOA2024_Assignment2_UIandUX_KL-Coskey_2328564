@@ -124,7 +124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8231546242910819550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8231546242910819536}
+        m_TargetAssemblyTypeName: ItemUse, Assembly-CSharp
+        m_MethodName: setPopUp_Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8231546242910819536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,8 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountStack: 0
   _sellPrice: 0
+  sellingItem: {fileID: 0}
   itemDetails: {fileID: 11400000, guid: b5c752f29021ef4419cc3cbd706c7467, type: 2}
-  buyStuff: {fileID: 0}
   popUpThing: {fileID: 0}
 --- !u!114 &-7992858593573264536
 MonoBehaviour:

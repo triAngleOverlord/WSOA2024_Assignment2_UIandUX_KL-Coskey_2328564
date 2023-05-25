@@ -51,7 +51,7 @@ public class BoughtItem : MonoBehaviour
 
         else
         {
-            item = existingItemSlot.gameObject.transform.GetChild(0).gameObject;
+            item = existingItemSlot.gameObject;
             item.GetComponent<ItemMouseEvents>().amountStack += valueSelected;
             //itemDetails.amountInStack += valueSelected;
             existingItemSlot.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(item.GetComponent<ItemMouseEvents>().amountStack.ToString());
