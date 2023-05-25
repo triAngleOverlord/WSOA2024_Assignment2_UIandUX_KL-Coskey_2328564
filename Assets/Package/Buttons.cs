@@ -58,10 +58,7 @@ public class Buttons : MonoBehaviour
         Debug.Log(GameManager.shopClicks);
         b_Return.SetActive(true);
         p_Outside.SetActive(false);
-        if (p_Pop != false)
-        {
-            p_Pop.SetActive(false);
-        }
+        
 
         p_Chest.SetActive(false);
 
@@ -71,6 +68,10 @@ public class Buttons : MonoBehaviour
         p_Backpack.SetActive(true);
         p_Backpack.GetComponent<RectTransform>().transform.localPosition = Vector3.right * 470;
         moreShopItems();
+        if (p_Pop != false)
+        {
+            p_Pop.SetActive(false);
+        }
         /*
         c_Money--;
         GameObject.Find("Money").GetComponent<TextMeshProUGUI>().text = new string(c_Money.ToString());
@@ -115,9 +116,18 @@ public class Buttons : MonoBehaviour
             }
             
         }
-        if (GameManager.shopClicks > 2)
+        if (GameManager.shopClicks > 3)
         {
             for (int i = 6; i < 11; i++)
+            {
+                GameManager.Instance.shopItems[i].gameObject.SetActive(true);
+
+            }
+
+        }
+        if (GameManager.shopClicks > 5)
+        {
+            for (int i = 11; i < 15; i++)
             {
                 GameManager.Instance.shopItems[i].gameObject.SetActive(true);
 

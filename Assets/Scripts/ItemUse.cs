@@ -146,17 +146,15 @@ public class ItemUse : MonoBehaviour
 
     public void backToShop(float value)
     {
-        itemDetails.amountInShop += value;
-        GameObject soldsign = GameObject.Find("Slots_Shop").transform.Find(itemDetails.itemName).transform.Find("SOLDOUT(Clone)").gameObject;
-        UnityEngine.Debug.Log(soldsign.name);
-        if (soldsign != null)
+        if (itemDetails.amountInShop == 0)
         {
+            
+            GameObject soldsign = GameObject.Find("Slots_Shop").transform.Find(itemDetails.itemName).transform.Find("SOLDOUT(Clone)").gameObject;
+            UnityEngine.Debug.Log(soldsign.name);
             GameObject.Find("Slots_Shop").transform.Find(itemDetails.itemName).transform.GetComponent<Button>().enabled = true;
             Destroy(soldsign);
+
         }
-        else
-        {
-            UnityEngine.Debug.Log("Item is not soldout");
-        }
+        itemDetails.amountInShop += value;
     }
 }
