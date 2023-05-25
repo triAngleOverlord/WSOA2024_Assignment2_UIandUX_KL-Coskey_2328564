@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6400731483666307347}
   - component: {fileID: -5059933031817735931}
   m_Layer: 5
-  m_Name: map
+  m_Name: Map
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,19 +259,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3795392127066888876}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3795392127066888878}
-        m_TargetAssemblyTypeName: ItemUse, Assembly-CSharp
-        m_MethodName: chestUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3795392127066888878
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7992858593573264536}
   - component: {fileID: 4792517399826463887}
   m_Layer: 5
-  m_Name: mirror
+  m_Name: Mirror
   m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,19 +124,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8231546242910819550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8231546242910819536}
-        m_TargetAssemblyTypeName: ItemUse, Assembly-CSharp
-        m_MethodName: chestUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &8231546242910819536
 MonoBehaviour:
   m_ObjectHideFlags: 0

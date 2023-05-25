@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 350496732744603931}
   - component: {fileID: -6905634682277388204}
   m_Layer: 5
-  m_Name: ribbon
+  m_Name: Ribbon
   m_TagString: Ribbon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,19 +371,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5008907319597870672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5008907319597870678}
-        m_TargetAssemblyTypeName: ItemUse, Assembly-CSharp
-        m_MethodName: chestUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5008907319597870678
 MonoBehaviour:
   m_ObjectHideFlags: 0

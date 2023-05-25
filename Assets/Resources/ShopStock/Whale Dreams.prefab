@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7341052591772024501}
   - component: {fileID: -7361016129844976261}
   m_Layer: 5
-  m_Name: whale Dreams
+  m_Name: Whale Dreams
   m_TagString: Whale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,19 +124,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3276260438649275213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3276260438649275203}
-        m_TargetAssemblyTypeName: ItemUse, Assembly-CSharp
-        m_MethodName: chestUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3276260438649275203
 MonoBehaviour:
   m_ObjectHideFlags: 0
