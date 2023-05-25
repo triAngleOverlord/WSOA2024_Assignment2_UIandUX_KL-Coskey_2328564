@@ -102,9 +102,10 @@ public class ItemUse : MonoBehaviour
                 GameManager.Instance.chestSpaces.Add(extraChest.GetComponent<Transform>());
             }
             //itemDetails.amountInStack--;
+            gameObject.transform.parent.transform.tag = "Avaliable";
+            GameManager.backPackSpace++;
             Destroy(gameObject);
             
-
         }
     }
     public void sliderAmount()
@@ -157,4 +158,6 @@ public class ItemUse : MonoBehaviour
         }
         itemDetails.amountInShop += value;
     }
+
+    
 }

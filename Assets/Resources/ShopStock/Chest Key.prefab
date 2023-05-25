@@ -371,7 +371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6598620902025870126}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2305452727408528776}
+        m_TargetAssemblyTypeName: ItemUse, Assembly-CSharp
+        m_MethodName: chestUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2305452727408528776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,8 +398,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountStack: 0
   _sellPrice: 0
+  sellingItem: {fileID: 0}
   itemDetails: {fileID: 11400000, guid: d28d6a9a1e686a6449524b362f2edbae, type: 2}
-  buyStuff: {fileID: 0}
   popUpThing: {fileID: 0}
 --- !u!114 &282301699
 MonoBehaviour:
