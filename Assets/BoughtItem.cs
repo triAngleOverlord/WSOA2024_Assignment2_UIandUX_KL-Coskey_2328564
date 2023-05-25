@@ -25,8 +25,27 @@ public class BoughtItem : MonoBehaviour
 
         if (existingItemSlot == null)
         {
-            GameObject[] slots = GameObject.FindGameObjectsWithTag("Avaliable");
-            if (slots != null)
+            foreach (Transform slot in GameObject.Find("BackpackSlots").transform)
+            {
+                if (slot.transform.CompareTag("Avaliable"))
+                {
+                    GameObject item = Instantiate(_item, slot.transform);
+                    item.transform.localPosition = Vector3.zero;
+                    slot.tag = item.tag;
+                    //Debug.Log(item.tag);
+                    //item.tag = "Untagged";
+                    item.GetComponent<ItemMouseEvents>().amountStack += valueSelected;
+                    //itemDetails.amountInStack += valueSelected;
+                    item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(item.GetComponent<ItemMouseEvents>().amountStack.ToString());
+                    GameObject pop = transform.GetComponent<POPUPDetails>().popUpThing;
+                    item.GetComponent<ItemUse>().popUpThing = pop;
+                    GameManager.backPackSpace--;
+                    Debug.Log(GameManager.backPackSpace);
+                    break;
+                }
+            }
+            //GameObject[] slots = GameObject.FindGameObjectsWithTag("Avaliable");
+            /*if (slots != null)
             {
                 GameObject item = Instantiate(_item, slots[0].transform);
                 item.transform.localPosition = Vector3.zero;
@@ -44,7 +63,7 @@ public class BoughtItem : MonoBehaviour
             else
             {
                 Debug.Log("There is no more space in your backpack");
-            }
+            }*/
             
             //item.gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
         }

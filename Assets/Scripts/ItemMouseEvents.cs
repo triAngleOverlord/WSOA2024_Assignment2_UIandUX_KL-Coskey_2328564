@@ -36,17 +36,37 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
             if (amountStack > 1)
             {
                 GameObject[] slots = GameObject.FindGameObjectsWithTag("Avaliable");
-                    if (slots != null)
+                    if (slots.Length != 0)
                     {
+                        
                         GameObject splitItem = Instantiate(itemDetails.itemObject, slots[0].transform);
-                        splitItem.transform.localPosition = Vector3.zero;
-                        slots[0].tag = splitItem.tag;
+                    
+                            
+                        if (splitItem != null)
+                        { 
+                            splitItem.transform.localPosition = Vector3.zero;
+                            slots[0].tag = splitItem.tag;
 
-                        amountStack--;
-                        transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(amountStack.ToString());
-                        splitItem.GetComponent<ItemMouseEvents>().amountStack = 1;
-                        splitItem.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(splitItem.GetComponent<ItemMouseEvents>().amountStack.ToString());
+                            amountStack--;
+                            transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(amountStack.ToString());
+                            splitItem.GetComponent<ItemMouseEvents>().amountStack = 1;
+                            splitItem.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(splitItem.GetComponent<ItemMouseEvents>().amountStack.ToString());
+                        
+                            if (slots[0].transform.parent.transform.name == "BackpackSlots")
+                            {
+                                GameManager.backPackSpace--;
+                                Debug.Log(GameManager.backPackSpace);
+                            }
+                            
 
+                        }
+                            
+                    else
+                    {
+                        Debug.Log("There is no more space here");
+                    }
+                    
+                        
 
             }
 
@@ -73,7 +93,12 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
         transform.SetParent(canvas.transform,true);
         Debug.Log(transform.name + " begun drag");
         itemCanvasGp.blocksRaycasts = false;
-        
+
+        if (originalSlot.transform.parent.transform.name == "BackpackSlots")
+        {
+            GameManager.backPackSpace++;
+            Debug.Log(GameManager.backPackSpace);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -98,6 +123,12 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
             transform.SetParent(originalSlot.transform,true);
             itemRect.anchoredPosition = Vector3.zero;
             itemCanvasGp.blocksRaycasts = true;
+
+            if (originalSlot.transform.parent.transform.name == "BackpackSlots")
+            {
+                GameManager.backPackSpace--;
+                Debug.Log(GameManager.backPackSpace);
+            }
         }
         
     }

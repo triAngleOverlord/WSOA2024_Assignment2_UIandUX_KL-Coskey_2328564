@@ -81,6 +81,7 @@ public class ItemUse : MonoBehaviour
         GameObject.Find("Money").GetComponent<TextMeshProUGUI>().text = GameManager.moneyNow.ToString();
         UnityEngine.Debug.Log(itemDetails.itemName +"x "+c_value+" was sold for $" + c_value * itemDetails.sellingPrice);
         checkItemStack();
+        backToShop(c_value);
 
 
     }
@@ -127,6 +128,13 @@ public class ItemUse : MonoBehaviour
         if (sellingItem.GetComponent<ItemMouseEvents>().amountStack == 0)
         {
             sellingItem.transform.parent.tag = "Avaliable";
+
+            if (sellingItem.transform.parent.transform.parent.name =="BackpackSlots")
+            {
+                GameManager.backPackSpace++;
+                UnityEngine.Debug.Log(GameManager.backPackSpace);
+                UnityEngine.Debug.Log(sellingItem.transform.parent.transform.parent.name);
+            }
             Destroy(sellingItem);
         }
     }
@@ -134,5 +142,21 @@ public class ItemUse : MonoBehaviour
     public void cancel()
     {
         popUpThing.transform.position = Vector3.one * 10;
+    }
+
+    public void backToShop(float value)
+    {
+        itemDetails.amountInShop += value;
+        GameObject soldsign = GameObject.Find("Slots_Shop").transform.Find(itemDetails.itemName).transform.Find("SOLDOUT(Clone)").gameObject;
+        UnityEngine.Debug.Log(soldsign.name);
+        if (soldsign != null)
+        {
+            GameObject.Find("Slots_Shop").transform.Find(itemDetails.itemName).transform.GetComponent<Button>().enabled = true;
+            Destroy(soldsign);
+        }
+        else
+        {
+            UnityEngine.Debug.Log("Item is not soldout");
+        }
     }
 }

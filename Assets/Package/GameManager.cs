@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     //public ChestSpaces spaces;
     public List<Transform> chestSpaces;
     public static int currentChestSpace;
+    public static float backPackSpace;
 
     public ItemDetails[] _itemDetails;
 
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         itemPopUp_S = GameObject.Find("ItemClicked_SELL");
         soldoutPopUp = Resources.Load<GameObject>("SOLDOUT");
         slotUpgrade = Resources.Load<GameObject>("ItemSlot");
+        backPackSpace = 9;
 
         _PopUpDetails =GameObject.FindObjectsByType<POPUPDetails>(FindObjectsSortMode.InstanceID);
         for (int i = 0; i < _PopUpDetails.Length; i++)
