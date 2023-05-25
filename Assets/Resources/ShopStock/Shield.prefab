@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountStack: 0
   _sellPrice: 0
-  itemDetails: {fileID: 0}
+  itemDetails: {fileID: 11400000, guid: 67ba2b3452bfd144a906f4ac3a951c4f, type: 2}
   buyStuff: {fileID: 0}
   popUpThing: {fileID: 0}
 --- !u!114 &-4763616585390739672
@@ -295,6 +295,7 @@ MonoBehaviour:
   itemRect: {fileID: 0}
   itemCanvasGp: {fileID: 0}
   itemDetails: {fileID: 11400000, guid: 67ba2b3452bfd144a906f4ac3a951c4f, type: 2}
+  amountStack: 0
 --- !u!225 &-5592260991141687328
 CanvasGroup:
   m_ObjectHideFlags: 0

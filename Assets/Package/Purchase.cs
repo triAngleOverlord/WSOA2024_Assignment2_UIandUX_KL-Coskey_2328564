@@ -33,7 +33,7 @@ public class Purchase : MonoBehaviour
         BoughtItem bought = GameObject.Find(itemName).GetComponent<BoughtItem>();
         
 
-        var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
+        var c_value = GameObject.Find("Slider_B").GetComponent<Slider>().value;
         float enoughMoney = GameManager.moneyNow - (price * c_value);
         //GameObject.Find("Avaliable").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());
 
@@ -43,7 +43,7 @@ public class Purchase : MonoBehaviour
             amountLeft = amountLeft - c_value;
             Debug.Log("Just bought " + c_value + "x " +itemName + " for only $" + price * c_value);
 
-            GameObject.Find("Slider").GetComponent<Slider>().value = 1;
+            GameObject.Find("Slider_B").GetComponent<Slider>().value = 1;
             itemDetails.amountInShop = amountLeft;
             //GameManager.c_itemAmount = amountLeft;
             //Debug.Log(amountLeft + " gm says:" + GameManager.c_itemAmount);
@@ -52,8 +52,8 @@ public class Purchase : MonoBehaviour
 
             GameObject.Find("Money").GetComponent<TextMeshProUGUI>().text = GameManager.moneyNow.ToString();
             GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());
-            GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
-            GameObject.Find("ItemClicked").SetActive(false);
+            GameObject.Find("Slider_B").GetComponent<Slider>().maxValue = amountLeft;
+            GameObject.Find("ItemClicked_BUY").SetActive(false);
             //Debug.Log(GameObject.Find(itemName).name);
             bought.valueSelected = c_value;
             bought.itemIntoBag();
@@ -76,13 +76,13 @@ public class Purchase : MonoBehaviour
         //amountLeft = itemDetails.amountInShop;
         price = itemDetails.buyingPrice;
         
-        var c_value = GameObject.Find("Slider").GetComponent<Slider>().value;
+        var c_value = GameObject.Find("Slider_B").GetComponent<Slider>().value;
         GameObject.Find("NumberItems").GetComponent<TextMeshProUGUI>().text = new string(c_value.ToString());
         GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("-$"+(c_value*price).ToString());
 
         if (c_value == 0)
         {
-            GameObject.Find("Slider").GetComponent<Slider>().value = 1;
+            GameObject.Find("Slider_B").GetComponent<Slider>().value = 1;
         }
 
     }

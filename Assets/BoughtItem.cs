@@ -36,7 +36,8 @@ public class BoughtItem : MonoBehaviour
                 item.GetComponent<ItemMouseEvents>().amountStack += valueSelected;
                 //itemDetails.amountInStack += valueSelected;
                 item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(item.GetComponent<ItemMouseEvents>().amountStack.ToString());
-            
+                GameObject pop= transform.GetComponent<POPUPDetails>().popUpThing;
+                item.GetComponent<ItemUse>().popUpThing = pop;
 
             }
 

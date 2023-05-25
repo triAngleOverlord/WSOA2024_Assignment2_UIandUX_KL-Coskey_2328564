@@ -15,7 +15,7 @@ public class Buttons : MonoBehaviour
         p_Backpack = GameObject.Find("BACKPACK");
         p_Shop = GameObject.Find("SHOP");
         p_Chest = GameObject.Find("CHEST");
-        p_Pop = GameObject.Find("ItemClicked");
+        p_Pop = GameObject.Find("ItemClicked_BUY");
         p_Outside = GameObject.Find("OUTSIDE");
         b_Return = GameObject.Find("Return");
 

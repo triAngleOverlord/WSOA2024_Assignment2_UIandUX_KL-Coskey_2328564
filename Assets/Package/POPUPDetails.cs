@@ -12,7 +12,7 @@ public class POPUPDetails : MonoBehaviour
     public ItemDetails itemDetails;
 
 
-    public Purchase buyStuff;
+    //public Purchase buyStuff;
     public GameObject popUpThing;
 
     
@@ -63,11 +63,11 @@ public class POPUPDetails : MonoBehaviour
         //GameManager.c_itemPrice = price;
         //GameManager.c_itemAmount = amountLeft;
 
-        GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
+        GameObject.Find("ItemName_B").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
 
-        GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountLeft;
-        GameObject.Find("Slider").GetComponent<Slider>().value = 1;
-        GameObject.Find("Slider").GetComponent<Purchase>().itemDetails = itemDetails;
+        GameObject.Find("Slider_B").GetComponent<Slider>().maxValue = amountLeft;
+        GameObject.Find("Slider_B").GetComponent<Slider>().value = 1;
+        GameObject.Find("Slider_B").GetComponent<Purchase>().itemDetails = itemDetails;
 
         GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemDetails = itemDetails;
         GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemButton = this.gameObject;

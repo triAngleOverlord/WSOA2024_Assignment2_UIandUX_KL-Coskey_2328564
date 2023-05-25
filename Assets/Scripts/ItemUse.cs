@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
@@ -10,9 +8,11 @@ public class ItemUse : MonoBehaviour
     public float amountStack;
     public float _sellPrice;
 
+    public GameObject sellingItem;
+
     public ItemDetails itemDetails;
 
-    public Purchase buyStuff;
+    //public Purchase buyStuff;
     public GameObject popUpThing;
 
 
@@ -35,28 +35,52 @@ public class ItemUse : MonoBehaviour
 
     public void setPopUp_Sell()
     {
-        itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
+        popUpThing = GameObject.Find("ItemClicked_SELL");
+        //itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
         //popUpThing.transform.SetParent(transform);
-        popUpThing.transform.localPosition = Vector3.right * 200;
+        Vector3 popUpPos = transform.position;
+        popUpPos.x = -2;
+        popUpThing.transform.position = popUpPos;
+        //popUpThing.transform.localPosition = Vector3.right * 200;
         //GameObject.Find("Slider").GetComponent<Slider>().value = 1;
 
         //buyStuff = GameObject.Find("BuyButton").GetComponent<BuyingPopUp>();
-        amountStack = itemDetails.amountInShop;
+        amountStack = GetComponent<ItemMouseEvents>().amountStack;
         _sellPrice = itemDetails.sellingPrice;
 
         //GameManager.c_itemName = transform.name;
         //GameManager.c_itemPrice = price;
         //GameManager.c_itemAmount = amountLeft;
 
-        GameObject.Find("ItemName").GetComponent<TextMeshProUGUI>().text = new string("Sell "+transform.name);
-        GameObject.Find("Slider").GetComponent<Slider>().maxValue = amountStack;
-        GameObject.Find("Slider").GetComponent<Purchase>().itemDetails = itemDetails;
-        GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemDetails = itemDetails;
-        GameObject.Find("ConfirmPurchase").GetComponent<Purchase>().itemButton = this.gameObject;
-        GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("+$" + _sellPrice.ToString());
-        GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string(amountStack.ToString());
+        GameObject.Find("ItemName_S").GetComponent<TextMeshProUGUI>().text = new string("Sell "+itemDetails.itemName);
+        GameObject.Find("Slider_S").GetComponent<Slider>().maxValue = amountStack;
+        GameObject.Find("Slider_S").GetComponent<Slider>().value = 1;
+        GameObject.Find("Slider_S").GetComponent<ItemUse>().itemDetails = itemDetails;
+        GameObject.Find("ConfirmSell").GetComponent<ItemUse>().itemDetails = itemDetails;
+        GameObject.Find("ConfirmSell").GetComponent<ItemUse>().sellingItem = this.gameObject;
+        GameObject.Find("ConfirmSell").GetComponent<ItemUse>().amountStack = amountStack;
+        GameObject.Find("TotalGain").GetComponent<TextMeshProUGUI>().text = new string("+$" + _sellPrice.ToString());
+        GameObject.Find("SellStackAmount").GetComponent<TextMeshProUGUI>().text = new string(amountStack.ToString());
+        GameObject.Find("NumberItemsToSell").GetComponent<TextMeshProUGUI>().text = new string("1");
 
 
+
+
+    }
+
+    public void sellItem()
+    {
+        cancel();
+        //Destroy(sellingItem);
+        
+
+        var c_value = GameObject.Find("Slider_S").GetComponent<Slider>().value;
+        sellingItem.GetComponent<ItemMouseEvents>().amountStack -= c_value;
+        sellingItem.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(sellingItem.GetComponent<ItemMouseEvents>().amountStack.ToString());
+        GameManager.moneyNow += c_value * itemDetails.sellingPrice;
+        GameObject.Find("Money").GetComponent<TextMeshProUGUI>().text = GameManager.moneyNow.ToString();
+        UnityEngine.Debug.Log(itemDetails.itemName +"x "+c_value+" was sold for $" + c_value * itemDetails.sellingPrice);
+        checkItemStack();
 
 
     }
@@ -81,6 +105,33 @@ public class ItemUse : MonoBehaviour
             
 
         }
-        
+    }
+    public void sliderAmount()
+    {
+        //amountLeft = itemDetails.amountInShop;
+        _sellPrice = itemDetails.sellingPrice;
+
+        var c_value = GameObject.Find("Slider_S").GetComponent<Slider>().value;
+        GameObject.Find("NumberItemsToSell").GetComponent<TextMeshProUGUI>().text = new string(c_value.ToString());
+        GameObject.Find("TotalGain").GetComponent<TextMeshProUGUI>().text = new string("+$" + (c_value * _sellPrice).ToString());
+
+        if (c_value == 0)
+        {
+            GameObject.Find("Slider_S").GetComponent<Slider>().value = 1;
+        }
+
+    }
+
+    public void checkItemStack()
+    {
+        if (sellingItem.GetComponent<ItemMouseEvents>().amountStack == 0)
+        {
+            Destroy(sellingItem);
+        }
+    }
+
+    public void cancel()
+    {
+        popUpThing.transform.position = Vector3.one * 10;
     }
 }

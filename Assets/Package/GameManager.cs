@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
 
     public POPUPDetails[] _PopUpDetails;
 
-    public GameObject itemPopUp;
+    public GameObject itemPopUp_B;
+    public GameObject itemPopUp_S;
 
     public GameObject soldoutPopUp;
     public GameObject slotUpgrade;
@@ -42,18 +43,19 @@ public class GameManager : MonoBehaviour
 
         moneyNow = 100;
 
-        itemPopUp = GameObject.Find("ItemClicked");
+        itemPopUp_B = GameObject.Find("ItemClicked_BUY");
+        itemPopUp_S = GameObject.Find("ItemClicked_SELL");
         soldoutPopUp = Resources.Load<GameObject>("SOLDOUT");
         slotUpgrade = Resources.Load<GameObject>("ItemSlot");
 
         _PopUpDetails =GameObject.FindObjectsByType<POPUPDetails>(FindObjectsSortMode.InstanceID);
         for (int i = 0; i < _PopUpDetails.Length; i++)
         {
-            _PopUpDetails[i].popUpThing = itemPopUp;
+            _PopUpDetails[i].popUpThing = itemPopUp_B;
         }
 
             //FindAnyObjectByType<ItemDetails>().popUpThing = itemPopUp;
-        itemPopUp.SetActive(false);
+        itemPopUp_B.SetActive(false);
         
         foreach (Transform child in GameObject.Find("Slots_Chest").transform)
         {
