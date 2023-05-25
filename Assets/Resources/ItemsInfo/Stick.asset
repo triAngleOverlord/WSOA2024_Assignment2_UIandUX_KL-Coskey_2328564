@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
   m_Name: Stick
   m_EditorClassIdentifier: 
-  itemName: Just a stick
-  sellingPrice: 0
+  itemName: Stick
   buyingPrice: 1
+  sellingPrice: 0
   stockAmount: 12
   itemObject: {fileID: 6063552272486309346, guid: 0f0ba88cc10b0c244b5c27c73bcdb7f4, type: 3}
-  amountInShop: 0
-  amountInStack: 0
+  amountInShop: 12

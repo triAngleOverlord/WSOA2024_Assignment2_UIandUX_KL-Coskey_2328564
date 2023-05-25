@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
   m_Name: Book
   m_EditorClassIdentifier: 
-  itemName: Old Book
-  sellingPrice: 100
-  buyingPrice: 90
+  itemName: Book
+  buyingPrice: 45
+  sellingPrice: 55
   stockAmount: 2
   itemObject: {fileID: 5926220228867769361, guid: adaf2dd68202d7249958693abdb88892, type: 3}
-  amountInShop: 0
-  amountInStack: 0
+  amountInShop: 2

@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Shroom
   m_EditorClassIdentifier: 
   itemName: Shroom
+  buyingPrice: 40
   sellingPrice: 65
-  buyingPrice: 65
   stockAmount: 7
   itemObject: {fileID: 423904897101052639, guid: 78b370b479bb3074aa341e2d5f43bca2, type: 3}
   amountInShop: 7
-  amountInStack: 0

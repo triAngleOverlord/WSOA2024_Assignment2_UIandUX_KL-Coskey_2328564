@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Whale Dreams
   m_EditorClassIdentifier: 
   itemName: Whale Dreams
-  sellingPrice: 2
-  buyingPrice: 5
+  buyingPrice: 25
+  sellingPrice: 25
   stockAmount: 4
   itemObject: {fileID: 3276260438649275201, guid: a6fadb8864dcc5640a757876b429b38b, type: 3}
-  amountInShop: 0
-  amountInStack: 0
+  amountInShop: 4

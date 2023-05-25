@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Map
   m_EditorClassIdentifier: 
   itemName: Treasure Map
+  buyingPrice: 90
   sellingPrice: 201
-  buyingPrice: 100
   stockAmount: 1
   itemObject: {fileID: 3795392127066888864, guid: 00cfd3b12604ba84899001c404501eaf, type: 3}
-  amountInShop: 0
-  amountInStack: 0
+  amountInShop: 1
