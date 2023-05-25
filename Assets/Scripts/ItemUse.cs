@@ -76,7 +76,7 @@ public class ItemUse : MonoBehaviour
                 extraChest.transform.localScale = Vector3.one;
                 GameManager.Instance.chestSpaces.Add(extraChest.GetComponent<Transform>());
             }
-            itemDetails.amountInStack--;
+            //itemDetails.amountInStack--;
             Destroy(gameObject);
             
 

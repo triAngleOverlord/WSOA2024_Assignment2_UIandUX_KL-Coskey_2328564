@@ -33,9 +33,9 @@ public class BoughtItem : MonoBehaviour
                 slots[0].tag = item.tag;
                 //Debug.Log(item.tag);
                 //item.tag = "Untagged";
-
-                itemDetails.amountInStack += valueSelected;
-                item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+                item.GetComponent<ItemMouseEvents>().amountStack += valueSelected;
+                //itemDetails.amountInStack += valueSelected;
+                item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(item.GetComponent<ItemMouseEvents>().amountStack.ToString());
             
 
             }
@@ -51,8 +51,9 @@ public class BoughtItem : MonoBehaviour
         else
         {
             item = existingItemSlot.gameObject.transform.GetChild(0).gameObject;
-            itemDetails.amountInStack += valueSelected;
-            existingItemSlot.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+            item.GetComponent<ItemMouseEvents>().amountStack += valueSelected;
+            //itemDetails.amountInStack += valueSelected;
+            existingItemSlot.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(item.GetComponent<ItemMouseEvents>().amountStack.ToString());
             //GameObject item = Instantiate(_item, parentItem.transform);
 
             //parentItem.tag = item.tag;

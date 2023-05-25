@@ -80,6 +80,11 @@ public class Purchase : MonoBehaviour
         GameObject.Find("NumberItems").GetComponent<TextMeshProUGUI>().text = new string(c_value.ToString());
         GameObject.Find("TotalPrice").GetComponent<TextMeshProUGUI>().text = new string("-$"+(c_value*price).ToString());
 
+        if (c_value == 0)
+        {
+            GameObject.Find("Slider").GetComponent<Slider>().value = 1;
+        }
+
     }
 
     public void checkItemStock()

@@ -13,6 +13,7 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
     public CanvasGroup itemCanvasGp;
 
     public ItemDetails itemDetails;
+    public float amountStack;
     public void Awake()
     {
         itemRect = GetComponent<RectTransform>();
@@ -32,7 +33,7 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
         {
             Debug.Log(transform.name + " has been right-clicked");
 
-            if (itemDetails.amountInStack > 1)
+            if (amountStack > 1)
             {
                 GameObject[] slots = GameObject.FindGameObjectsWithTag("Avaliable");
                     if (slots != null)
@@ -41,9 +42,10 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
                         splitItem.transform.localPosition = Vector3.zero;
                         slots[0].tag = splitItem.tag;
 
-                        itemDetails.amountInStack--;
-                        transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
-                        splitItem.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(1.ToString());
+                        amountStack--;
+                        transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(amountStack.ToString());
+                        splitItem.GetComponent<ItemMouseEvents>().amountStack = 1;
+                        splitItem.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(splitItem.GetComponent<ItemMouseEvents>().amountStack.ToString());
 
 
             }
@@ -108,9 +110,11 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
         {
             if(eventData.pointerDrag.transform.tag == transform.tag)
             {
+                Debug.Log(amountStack.ToString()+ " + "+ eventData.pointerDrag.GetComponent<ItemMouseEvents>().amountStack);
+                amountStack += eventData.pointerDrag.GetComponent<ItemMouseEvents>().amountStack;
                 Destroy(eventData.pointerDrag);
-                itemDetails.amountInStack++;
-                transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+                
+                transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(amountStack.ToString());
 
             }
 
