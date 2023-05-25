@@ -22,11 +22,14 @@ public class GameManager : MonoBehaviour
 
     public GameObject soldoutPopUp;
     public GameObject slotUpgrade;
+    public GameObject pocketUpgrade;
 
     //public ChestSpaces spaces;
     public List<Transform> chestSpaces;
-    public static int currentChestSpace;
+    //public static int currentChestSpace;
+    public List<Transform> _backPackPockets;
     public static float backPackSpace;
+    public static int pockets;
 
     public static float shopClicks;
     public List<Transform> shopItems;
@@ -51,7 +54,8 @@ public class GameManager : MonoBehaviour
         itemPopUp_S = GameObject.Find("ItemClicked_SELL");
         soldoutPopUp = Resources.Load<GameObject>("SOLDOUT");
         slotUpgrade = Resources.Load<GameObject>("ItemSlot");
-        backPackSpace = 9;
+        pocketUpgrade = Resources.Load<GameObject>("ItemSlot_Back");
+        backPackSpace = 3;
         shopClicks = 0;
 
         _PopUpDetails =GameObject.FindObjectsByType<POPUPDetails>(FindObjectsSortMode.InstanceID);
@@ -73,7 +77,19 @@ public class GameManager : MonoBehaviour
             shopItems.Add(itemChild.transform);
             itemChild.gameObject.SetActive(false);
         }
-                    //Resources.Load<GameObject>("ItemClicked");
+
+        foreach (Transform pocketChild in GameObject.Find("BackpackSlots").transform)
+        {
+            _backPackPockets.Add(pocketChild.transform);
+            pocketChild.gameObject.SetActive(false);
+        }
+
+        for(int i =0; i <3;  i++)
+        {
+            _backPackPockets[i].gameObject.SetActive(true);
+        }
+        pockets = 2;
+        //Resources.Load<GameObject>("ItemClicked");
 
 
         //itemPopUp = Resources.Load<GameObject>("ItemClicked");
@@ -81,7 +97,7 @@ public class GameManager : MonoBehaviour
 
         ///gives the popup and soldout objects to every item's buy button at beginning in order to instantiate later
         //itemPopUp = GameObject.Find("ItemClicked");
-        
+
         //chestContainer = Resources.Load<GameObject>("Container_Chest");
 
         /*
@@ -104,7 +120,7 @@ public class GameManager : MonoBehaviour
         //itemPopUp.SetActive(false);
 
         //currentChestSpace = 0;
-        
+
 
         //Resources.Load<GameObject>("ItemClicked");
 

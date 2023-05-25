@@ -20,6 +20,7 @@ TagManager:
   - Mirror
   - Whale
   - Ribbon
+  - SewPocket
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -159,5 +160,34 @@ public class ItemUse : MonoBehaviour
         itemDetails.amountInShop += value;
     }
 
+    public void sewMorePockets()
+    {
+        for (int i = GameManager.pockets+1; i < GameManager.pockets+4; i++)
+        {
+            /*
+            GameObject extraPocket = Instantiate(GameManager.Instance.pocketUpgrade);
+            extraPocket.transform.SetParent(GameObject.Find("BackpackSlots").transform);
+            extraPocket.transform.localScale = Vector3.one;
+            GameManager.Instance._backPackPockets.Add(extraPocket.GetComponent<Transform>());
+            */
+            GameManager.Instance._backPackPockets[i].gameObject.SetActive(true);
+            GameManager.backPackSpace++;
+            
+        }
+        GameManager.pockets += 3;
+        //itemDetails.amountInStack--;
+        gameObject.GetComponent<ItemMouseEvents>().amountStack--;
+        transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(transform.GetComponent<ItemMouseEvents>().amountStack.ToString());
+            
+
+        if (gameObject.GetComponent<ItemMouseEvents>().amountStack == 0)
+        {
+            gameObject.transform.parent.transform.tag = "Avaliable";
+            GameManager.backPackSpace++;
+            Destroy(gameObject);
+
+        }
+        
+    }
     
 }

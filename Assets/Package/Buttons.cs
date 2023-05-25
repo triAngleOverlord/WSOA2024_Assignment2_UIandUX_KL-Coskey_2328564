@@ -127,7 +127,7 @@ public class Buttons : MonoBehaviour
         }
         if (GameManager.shopClicks > 5)
         {
-            for (int i = 11; i < 15; i++)
+            for (int i = 11; i < 16; i++)
             {
                 GameManager.Instance.shopItems[i].gameObject.SetActive(true);
 
