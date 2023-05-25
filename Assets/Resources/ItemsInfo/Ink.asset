@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
   m_Name: Ink
   m_EditorClassIdentifier: 
-  itemName: Ink Bottle
-  sellingPrice: 21
+  itemName: Ink
   buyingPrice: 23
+  sellingPrice: 21
   stockAmount: 7
   itemObject: {fileID: 1991162029770056572, guid: 76ecae4eb57e86f4986594cc6305f06b, type: 3}
-  amountInShop: 0
-  amountInStack: 0
+  amountInShop: 7
