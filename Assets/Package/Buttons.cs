@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Buttons : MonoBehaviour
@@ -134,5 +135,35 @@ public class Buttons : MonoBehaviour
             }
 
         }
+    }
+
+    public void sortByLowestPrice()
+    {   GameManager.Instance.shopItems.Sort((a, b) => b.GetComponent<POPUPDetails>().itemDetails.buyingPrice.CompareTo(a.GetComponent<POPUPDetails>().itemDetails.buyingPrice));
+        reassignIndex();
+        
+        
+        
+    }
+
+    public void sortByHighestPrice()
+    {
+        GameManager.Instance.shopItems.Sort((a, b)=> a.GetComponent<POPUPDetails>().itemDetails.buyingPrice.CompareTo( b.GetComponent<POPUPDetails>().itemDetails.buyingPrice));
+        reassignIndex();
+        
+        
+
+    }
+
+
+    public void reassignIndex()
+    {
+        for(int i = 0; i < GameManager.Instance.shopItems.Count; i++)
+        {
+            if (GameManager.Instance.shopItems[i] != null)
+            {
+                GameManager.Instance.shopItems[i].gameObject.transform.SetSiblingIndex(i);
+            }
+        }
+
     }
 }

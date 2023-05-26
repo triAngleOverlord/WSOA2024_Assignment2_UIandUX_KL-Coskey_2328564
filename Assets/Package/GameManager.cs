@@ -91,6 +91,8 @@ public class GameManager : MonoBehaviour
         }
         pockets = 2;
 
+        
+
         //GameObject.Find("Scrollbar Vertical").GetComponent<Scrollbar>().enabled = false;
         //Resources.Load<GameObject>("ItemClicked");
 
