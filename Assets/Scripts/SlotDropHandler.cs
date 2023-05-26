@@ -9,7 +9,9 @@ public class SlotDropHandler : MonoBehaviour, IDropHandler
 
         if (eventData.pointerDrag != null)
         {
-            if(transform.tag == "Avaliable")
+            if (eventData.pointerDrag.transform.tag != "Untagged")
+            {
+                if(transform.tag == "Avaliable")
             {
                 eventData.pointerDrag.transform.SetParent(transform, true);
                 eventData.pointerDrag.transform.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
@@ -22,6 +24,9 @@ public class SlotDropHandler : MonoBehaviour, IDropHandler
                 }
 
             }
+
+            }
+            
             
         }
     }

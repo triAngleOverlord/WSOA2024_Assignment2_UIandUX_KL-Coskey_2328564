@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -89,6 +90,8 @@ public class GameManager : MonoBehaviour
             _backPackPockets[i].gameObject.SetActive(true);
         }
         pockets = 2;
+
+        //GameObject.Find("Scrollbar Vertical").GetComponent<Scrollbar>().enabled = false;
         //Resources.Load<GameObject>("ItemClicked");
 
 

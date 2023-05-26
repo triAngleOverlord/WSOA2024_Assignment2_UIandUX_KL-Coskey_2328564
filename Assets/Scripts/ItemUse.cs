@@ -101,12 +101,26 @@ public class ItemUse : MonoBehaviour
                 extraChest.transform.SetParent(GameObject.Find("Slots_Chest").transform);
                 extraChest.transform.localScale = Vector3.one;
                 GameManager.Instance.chestSpaces.Add(extraChest.GetComponent<Transform>());
+                
             }
+            //GameObject.Find("Scrollbar Vertical").GetComponent<Scrollbar>().enabled = true;
+            GameObject.Find("Scrollbar Vertical").GetComponent<Scrollbar>().numberOfSteps++;
+            RectTransform rt = GameObject.Find("Slots_Chest").GetComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(0, rt.rect.height + 206);
+            //GameObject.Find("Scrollbar Vertical").GetComponent<Scrollbar>().size -= ((int)0.24);
             //itemDetails.amountInStack--;
-            gameObject.transform.parent.transform.tag = "Avaliable";
-            GameManager.backPackSpace++;
-            Destroy(gameObject);
-            
+            gameObject.GetComponent<ItemMouseEvents>().amountStack--;
+            transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(transform.GetComponent<ItemMouseEvents>().amountStack.ToString());
+
+
+            if (gameObject.GetComponent<ItemMouseEvents>().amountStack == 0)
+            {
+                gameObject.transform.parent.transform.tag = "Avaliable";
+                GameManager.backPackSpace++;
+                Destroy(gameObject);
+
+            }
+
         }
     }
     public void sliderAmount()
