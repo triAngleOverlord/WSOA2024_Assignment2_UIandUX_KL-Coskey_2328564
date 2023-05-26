@@ -137,7 +137,7 @@ public class Buttons : MonoBehaviour
         }
     }
 
-    public void sortByLowestPrice()
+    public void sortByHighestPrice()
     {   GameManager.Instance.shopItems.Sort((a, b) => b.GetComponent<POPUPDetails>().itemDetails.buyingPrice.CompareTo(a.GetComponent<POPUPDetails>().itemDetails.buyingPrice));
         reassignIndex();
         
@@ -145,7 +145,7 @@ public class Buttons : MonoBehaviour
         
     }
 
-    public void sortByHighestPrice()
+    public void sortByLowestPrice()
     {
         GameManager.Instance.shopItems.Sort((a, b)=> a.GetComponent<POPUPDetails>().itemDetails.buyingPrice.CompareTo( b.GetComponent<POPUPDetails>().itemDetails.buyingPrice));
         reassignIndex();
