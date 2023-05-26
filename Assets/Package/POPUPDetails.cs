@@ -15,19 +15,6 @@ public class POPUPDetails : MonoBehaviour
     //public Purchase buyStuff;
     public GameObject popUpThing;
 
-    
-
-    /*
-    private void Start()
-    {
-        popUpThing = GameObject.Find("ItemClicked");
-
-        if (popUpThing != null )
-        {
-            popUpThing.SetActive(false);
-        }
-        
-    }*/
 
     public void thisItemSelected()
     {
@@ -48,20 +35,13 @@ public class POPUPDetails : MonoBehaviour
 
     public void setPopUp()
     {
-        //itemDetails = transform.GetComponent<BoughtItem>().itemDetails;
-        //popUpThing.transform.SetParent(transform);
         Vector3 popUpPos = transform.position;
         popUpPos.x = 2;
         popUpThing.transform.position = popUpPos;
-        //GameObject.Find("Slider").GetComponent<Slider>().value = 1;
-
-        //buyStuff = GameObject.Find("BuyButton").GetComponent<BuyingPopUp>();
+        
         amountLeft = itemDetails.amountInShop;
         price = itemDetails.buyingPrice;
 
-        //GameManager.c_itemName = transform.name;
-        //GameManager.c_itemPrice = price;
-        //GameManager.c_itemAmount = amountLeft;
 
         GameObject.Find("ItemName_B").GetComponent<TextMeshProUGUI>().text = new string(transform.name);
 

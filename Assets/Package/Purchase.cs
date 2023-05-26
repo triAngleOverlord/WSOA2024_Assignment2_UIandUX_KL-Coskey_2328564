@@ -11,18 +11,7 @@ public class Purchase : MonoBehaviour
     public GameObject _itemObject;
 
     public GameObject itemButton;
-    //public BoughtItem boughtItem;
-
-
-
-    /*
-        private void Update()
-        {
-            itemName = GameManager.c_itemName;
-            price = GameManager.c_itemPrice;
-            amountLeft = GameManager.c_itemAmount;
-        }*/
-
+    
     public void buyWithPrice()
     {
         itemName = itemDetails.itemName;
@@ -97,10 +86,6 @@ public class Purchase : MonoBehaviour
 
             GameObject.Find("Slider_B").GetComponent<Slider>().value = 1;
             itemDetails.amountInShop = amountLeft;
-            //GameManager.c_itemAmount = amountLeft;
-            //Debug.Log(amountLeft + " gm says:" + GameManager.c_itemAmount);
-
-            //GameObject.Find(itemName).GetComponent<POPUPDetails>().amountLeft = GameManager.c_itemAmount;
 
             GameObject.Find("Money").GetComponent<TextMeshProUGUI>().text = GameManager.moneyNow.ToString();
             GameObject.Find("AvaliableStock").GetComponent<TextMeshProUGUI>().text = new string(amountLeft.ToString());

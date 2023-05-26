@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,11 +9,6 @@ public class GameManager : MonoBehaviour
     public static int moneyToBuy;
 
     
-    //public static string c_itemName;
-    //public static float c_itemPrice;
-    //public static float c_itemAmount;
-
-    //public static int itemStackNum;
 
     public POPUPDetails[] _PopUpDetails;
 
@@ -25,9 +19,9 @@ public class GameManager : MonoBehaviour
     public GameObject slotUpgrade;
     public GameObject pocketUpgrade;
 
-    //public ChestSpaces spaces;
+    
     public List<Transform> chestSpaces;
-    //public static int currentChestSpace;
+    
     public List<Transform> _backPackPockets;
     public static float backPackSpace;
     public static int pockets;
@@ -93,43 +87,6 @@ public class GameManager : MonoBehaviour
 
         
 
-        //GameObject.Find("Scrollbar Vertical").GetComponent<Scrollbar>().enabled = false;
-        //Resources.Load<GameObject>("ItemClicked");
-
-
-        //itemPopUp = Resources.Load<GameObject>("ItemClicked");
-
-
-        ///gives the popup and soldout objects to every item's buy button at beginning in order to instantiate later
-        //itemPopUp = GameObject.Find("ItemClicked");
-
-        //chestContainer = Resources.Load<GameObject>("Container_Chest");
-
-        /*
-        //spaces = new ChestSpaces();
-        chestSpaces = new List<GameObject>();
-        GameObject extraChest = Instantiate(chestContainer, GameObject.Find("Chest").transform);
-        chestSpaces.Add(extraChest);
-        GameObject.Find("PreviousPageChest").GetComponent<ChestButtons>().chestContainer = chestContainer;
-        //Debug.Log(GameObject.Find("PreviousPageChest").gameObject.name);
-        Debug.Log( chestSpaces[currentChestSpace].gameObject.name);*/
-
-        /*
-        buy =GameObject.FindObjectsByType<BuyButton>(FindObjectsSortMode.InstanceID);
-        for (int i = 0; i < buy.Length; i++)
-        {
-            buy[i].popUpThing = itemPopUp;
-            buy[i].soldPopUp = soldoutPopUp;
-        }*/
-
-        //itemPopUp.SetActive(false);
-
-        //currentChestSpace = 0;
-
-
-        //Resources.Load<GameObject>("ItemClicked");
-
-        //Debug.Log(itemPopUp.name);
 
         _itemDetails = Resources.LoadAll<ItemDetails>("ItemsInfo");
         for (int i= 0; i < _itemDetails.Length;i++)
@@ -149,15 +106,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    /*
-    public void chestUpgrade(GameObject chest)
-    {
-        chestSpaces.Add(chest);
-        //GameObject extraChest = Instantiate(chest, GameObject.Find("Chest").transform);
-        //chestSpaces.Add(extraChest);
-        
-        //extraChest.SetActive(false);
-        Debug.Log(chestSpaces[currentChestSpace].gameObject.name);
-    }*/
+    
 
 }

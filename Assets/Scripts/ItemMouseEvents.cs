@@ -23,11 +23,6 @@ public class ItemMouseEvents : MonoBehaviour, IPointerClickHandler, IBeginDragHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        /*
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            Debug.Log(transform.name + " has been left-clicked");
-        }*/
 
         if (eventData.button == PointerEventData.InputButton.Right)
         {

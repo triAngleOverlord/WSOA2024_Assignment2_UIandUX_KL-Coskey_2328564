@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: CD
   m_EditorClassIdentifier: 
   itemName: CD
-  sellingPrice: 31
   buyingPrice: 25
-  stockAmount: 100
+  sellingPrice: 31
+  stockAmount: 6
   itemObject: {fileID: 7617442716386397868, guid: 7446a28218a6cdf498763b59d0f4bbfd, type: 3}
-  amountInShop: 0
-  amountInStack: 0
+  amountInShop: 99

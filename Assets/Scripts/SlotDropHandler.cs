@@ -5,7 +5,6 @@ public class SlotDropHandler : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log(transform.name+" detected an OnDrop");
 
         if (eventData.pointerDrag != null)
         {
