@@ -5,14 +5,27 @@ TagManager:
   serializedVersion: 2
   tags:
   - Avaliable
-  - Bread
-  - Hat
-  - Box
+  - Diamond
+  - Chest Key
+  - Scroll
+  - Dagger
+  - Book
+  - Shield
+  - Stick
+  - Map
+  - Feather
+  - Shroom
+  - Ink
+  - CD
+  - Mirror
+  - Whale
+  - Ribbon
+  - SewPocket
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PopUp
   - Water
   - UI
   - 
@@ -42,6 +55,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Labels
+    uniqueID: 998050935
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PopUp
+    uniqueID: 4064982699
     locked: 0

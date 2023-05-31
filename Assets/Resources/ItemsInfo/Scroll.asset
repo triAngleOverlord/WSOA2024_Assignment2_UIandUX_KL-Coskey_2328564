@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
+  m_Name: Scroll
+  m_EditorClassIdentifier: 
+  itemName: Scroll
+  sellingPrice: 4
+  buyingPrice: 5
+  stockAmount: 20
+  itemObject: {fileID: 6360917236074415729, guid: 9d6d0d61a614d5d4393a2e683b84147b, type: 3}
+  amountInShop: 0
+  amountInStack: 0

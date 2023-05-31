@@ -1,0 +1,10 @@
+diff a/Assets/Resources/Images/Shop.png.meta b/Assets/Resources/Images/Shop.png.meta	(rejected hunks)
+@@ -42,7 +42,7 @@
+   nPOTScale: 0
+   lightmap: 0
+   compressionQuality: 50
+-  spriteMode: 1
++  spriteMode: 3
+   spriteExtrude: 1
+   spriteMeshType: 1
+   alignment: 0

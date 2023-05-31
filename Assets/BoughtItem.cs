@@ -1,42 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class BoughtItem : MonoBehaviour
 {
-    [SerializeField] private GameObject _item;
-    private GameObject item;
+    public GameObject _item;
+    public GameObject item;
+    public float valueSelected;
 
     public ItemDetails itemDetails;
+
+    
     public void itemIntoBag()
     {
-        //GameObject bag = GameObject.Find("BackPack");
+        _item = itemDetails.itemObject;
         GameObject existingItemSlot = GameObject.FindGameObjectWithTag(_item.tag);
-       // Debug.Log(_item.tag);
-        //Debug.Log(parentItem.tag);
+        
 
         if (existingItemSlot == null)
         {
-            GameObject[] slots = GameObject.FindGameObjectsWithTag("Avaliable");
-            GameObject item = Instantiate(_item, slots[0].transform);
-            slots[0].tag = item.tag;
-            item.tag = "Untagged";
-
-            itemDetails.amountInStack++;
-            item.gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
+            foreach (Transform slot in GameObject.Find("BackpackSlots").transform)
+            {
+                if (slot.transform.CompareTag("Avaliable"))
+                {
+                    GameObject item = Instantiate(_item, slot.transform);
+                    item.transform.localPosition = Vector3.zero;
+                    slot.tag = item.tag;
+                    //Debug.Log(item.tag);
+                    //item.tag = "Untagged";
+                    item.GetComponent<ItemMouseEvents>().amountStack += valueSelected;
+                    //itemDetails.amountInStack += valueSelected;
+                    item.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(item.GetComponent<ItemMouseEvents>().amountStack.ToString());
+                    GameObject pop = transform.GetComponent<POPUPDetails>().popUpThing;
+                    item.GetComponent<ItemUse>().popUpThing = pop;
+                    GameManager.backPackSpace--;
+                    Debug.Log(GameManager.backPackSpace);
+                    break;
+                }
+            }
         }
 
         else
         {
-            item = existingItemSlot.gameObject.transform.GetChild(0).gameObject;
-            itemDetails.amountInStack++;
-            item.gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(itemDetails.amountInStack.ToString());
-            //GameObject item = Instantiate(_item, parentItem.transform);
-
-            //parentItem.tag = item.tag;
-            //item.tag = "Untagged";
+            item = existingItemSlot.gameObject;
+            item.GetComponent<ItemMouseEvents>().amountStack += valueSelected;
+            
+            existingItemSlot.gameObject.transform.Find("Circle").gameObject.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = new string(item.GetComponent<ItemMouseEvents>().amountStack.ToString());
+            
         }
             
         

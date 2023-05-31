@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05359373bae870a478de09e962ae0928, type: 3}
+  m_Name: Feather
+  m_EditorClassIdentifier: 
+  itemName: Feather
+  sellingPrice: 1
+  buyingPrice: 3
+  stockAmount: 70
+  itemObject: {fileID: 723669683479405897, guid: 8acc567fc52e8234ca0369f5de992014, type: 3}
+  amountInShop: 0
+  amountInStack: 0
